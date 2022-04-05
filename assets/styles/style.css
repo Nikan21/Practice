@@ -1,0 +1,58 @@
+:root {
+    --borderBlack: 1px solid black;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+.firstNav,
+.secondNav{
+  padding: 0;
+  list-style: none;
+  font-size: 0px;
+}
+
+.firstNav{
+    position: relative;
+    margin: 10px 10px;
+}
+
+.secondNav{
+    display: none;
+    position: absolute;
+    top: 50px;
+    left: 0;
+}
+
+.firstNav li{
+    display: inline-block;
+    background-color: green;
+}
+
+.secondNav li{
+    display: block;
+    background-color: red;
+}
+
+.firstNav li,
+.secondNav li{
+    width: 100px;
+    padding: 15px 30px;
+    font-size: 1rem;
+    text-align: center;
+    border: var(--borderBlack);
+}
+
+.firstNav li:first-child:hover>.secondNav{
+    display:block;
+}
+
+.firstNav li:hover{
+    background-color: orangered;
+}
+
+.secondNav li:hover{
+    background-color: white;
+}
