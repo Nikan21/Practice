@@ -1,58 +1,121 @@
-:root {
-    --borderBlack: 1px solid black;
+* {
+  box-sizing: border-box;
+  margin: 0;
 }
 
-*{
-    box-sizing: border-box;
-    margin: 0;
+body {
+  height: 100vh;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: minmax(100px, auto) 1fr minmax(100px, auto);
 }
 
-.firstNav,
-.secondNav{
+.grid {
+  display: grid;
+}
+
+.grid-header {
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-around;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.grid-header,
+.grid-div,
+.grid-footer {
+  grid-column: span 3;
+}
+
+.grid-header,
+.grid-nav,
+.grid-main,
+.grid-aside,
+article,
+.grid-footer {
+  border: 2px solid white;
+}
+
+.grid-header,
+.grid-header > a,
+.grid-nav a,
+article,
+.grid-footer {
+  background-color: #313132;
+}
+
+.grid-header > a {
+  border: 3px solid white;
+  padding: 20px 40px;
+}
+
+.grid-header > a,
+.grid-nav a {
+  text-decoration: none;
+}
+
+.grid-header > a,
+p,
+article {
+  font-size: 20px;
+}
+
+.grid-header > a,
+.grid-nav a,
+article,
+.grid-footer {
+  color: white;
+}
+
+.grid-div {
+  grid-template-columns: minmax(200px, auto) 1fr minmax(200px, auto);
+}
+
+.grid-nav a {
+  display: block;
+  font-size: 25px;
+  border: 1px solid white;
+  padding: 30px;
+}
+
+ul {
   padding: 0;
   list-style: none;
-  font-size: 0px;
 }
 
-.firstNav{
-    position: relative;
-    margin: 10px 10px;
+.grid-main {
+  grid-template-columns: 1fr;
+  row-gap: 10px;
+  background-color: rgb(221, 215, 215);
 }
 
-.secondNav{
-    display: none;
-    position: absolute;
-    top: 50px;
-    left: 0;
+.section1 {
+  grid-template-columns: 1fr 3fr;
 }
 
-.firstNav li{
-    display: inline-block;
-    background-color: green;
+.section1,
+.section2 {
+  column-gap: 10px;
 }
 
-.secondNav li{
-    display: block;
-    background-color: red;
+.section2 {
+  grid-template-columns: 3fr 1fr;
 }
 
-.firstNav li,
-.secondNav li{
-    width: 100px;
-    padding: 15px 30px;
-    font-size: 1rem;
-    text-align: center;
-    border: var(--borderBlack);
+img {
+  width: 350px;
+  justify-self: center;
 }
 
-.firstNav li:first-child:hover>.secondNav{
-    display:block;
+img,
+p {
+  align-self: center;
 }
 
-.firstNav li:hover{
-    background-color: orangered;
+article {
+  padding: 125px 30px;
 }
 
-.secondNav li:hover{
-    background-color: white;
+.grid-footer {
+  justify-content: center;
+  font-size: 30px;
 }
