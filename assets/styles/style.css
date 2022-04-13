@@ -14,7 +14,7 @@ body {
 }
 
 .grid-header {
-  grid-template-columns: repeat(4, auto);
+  grid-template-columns: repeat(auto-fit, minmax(150px, auto));
   justify-content: space-around;
   align-items: center;
   column-gap: 20px;
@@ -39,11 +39,13 @@ article,
 .grid-header > a,
 .grid-nav a,
 article,
-.grid-footer {
+.grid-footer,
+.button {
   background-color: #313132;
 }
 
-.grid-header > a {
+.grid-header > a,
+.button {
   border: 3px solid white;
   padding: 20px 40px;
 }
@@ -55,14 +57,16 @@ article,
 
 .grid-header > a,
 p,
-article {
+article,
+.button {
   font-size: 20px;
 }
 
 .grid-header > a,
 .grid-nav a,
 article,
-.grid-footer {
+.grid-footer,
+.button {
   color: white;
 }
 
@@ -118,4 +122,29 @@ article {
 .grid-footer {
   justify-content: center;
   font-size: 30px;
+}
+
+.menu-wrapper {
+  display: none;
+  border: 5px solid white;
+  position: absolute;
+  background-color: black;
+  min-width: 230px;
+  justify-content: center;
+  right: 0;
+  top: 100px;
+}
+
+.menu-wrapper > a {
+  text-decoration: none;
+  color: white;
+  font-size: 40px;
+}
+
+.button:active + .menu-wrapper {
+  display: grid;
+}
+
+.button:hover {
+  cursor: pointer;
 }
