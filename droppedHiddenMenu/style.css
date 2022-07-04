@@ -1,0 +1,20 @@
+.triangle {
+  color: green;
+}
+
+li {
+  list-style: none;
+}
+
+#wrapper {
+  cursor: pointer;
+}
+
+ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.title {
+  margin-left: 5px;
+}
