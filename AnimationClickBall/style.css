@@ -1,0 +1,15 @@
+#field {
+    width: 200px;
+    height: 150px;
+    border: 20px solid black;
+    background-color: #00FF00;
+    overflow: hidden;
+}
+
+#field:hover {
+    cursor: pointer;
+}
+
+body{
+    height: 2000px
+}
