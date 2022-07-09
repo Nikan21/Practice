@@ -1,0 +1,14 @@
+th:hover {
+    cursor: pointer;
+    background-color: yellow;
+}
+
+table {
+    border-collapse: collapse
+}
+
+table th,
+table td {
+    font-size: 18px;
+    border: 1px solid black;
+}
