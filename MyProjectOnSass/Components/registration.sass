@@ -1,0 +1,68 @@
+@use '../reset'
+
+@mixin flex($flex-direction: row, $justify-content, $align-items)
+    display: flex
+    flex-direction: $flex-direction
+    justify-content: $justify-content
+    align-items: $align-items
+
+.Window1
+    @include flex($justify-content: center, $align-items: center)
+    min:
+        height: 100vh
+        width: 100%
+    background: url(../assets/images/Background_food.png) center no-repeat
+        size: cover
+
+.Register
+    @include flex($flex-direction: column, $justify-content: center, $align-items: center)
+    min:
+        height: 70vh
+        width: 30%
+    border: 2px solid orangered
+    background: rgba(255, 255, 255, 0.89)
+
+.Head
+    padding-bottom: 15px
+    font-size: 28px
+    color: rgb(255, 38, 0)
+
+.Image
+    padding-bottom: 20px
+
+.Form
+    @include flex($flex-direction: column, $justify-content: space-evenly, $align-items: center)
+
+.Size_block
+    margin: 15px 0
+    padding: 15px 50px
+    border: 1px solid rgb(255, 30, 0)
+    font-size: 18px
+    text-align: center
+
+.Confirm
+    padding: 20px 0
+    font-size: 20px
+
+.Checkbox
+    min:
+        height: 17px
+        width: 30px
+
+.Confirm_button
+    padding: 20px 100px
+    border: 2px solid red
+    font:
+        size: 20px
+        weight: 600
+    background-color: white
+    color: red
+
+::placeholder
+    color: orangered
+
+@media (max-width: 414px)
+    .Register
+        min:
+            height: 85vh
+            width: 95%

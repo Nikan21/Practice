@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Poppins:wght@600;700&family=Roboto:wght@700&display=swap")
+
+@mixin flex($flex-direction: row, $justify-content, $align-items)
+    display: flex
+    flex-direction: $flex-direction
+    justify-content: $justify-content
+    align-items: $align-items
+
+@mixin textLine($padding-bottom: 0px, $font-weight: 0)
+    padding-bottom: $padding-bottom
+    font-weight: $font-weight
+
+@mixin font($font-size, $font-weight)
+    font-size: $font-size
+    font-weight: $font-weight
+
+.Window1
+    min-height: 175vh
+
+.Header-head
+    @include flex($justify-content: space-between, $align-items: center)
+    min-height: 20vh
+
+.Header-logo
+    padding-left: 80px
+
+.Burger
+    padding-right: 30px
+
+.Header-main
+    @include flex($flex-direction: column, $justify-content: center, $align-items: center)
+    min-height: 80vh
+    background: url(../images/Background_food.png) center no-repeat
+        size: cover
+
+.Header-all-line
+    color: white
+
+.Header-second-mobile-line
+    display: none
+
+.Header-second-line
+    padding-top: 20px
+    font:
+        family: "Poppins", sans-serif
+        size: 60px
+    text-align: center
+
+.Header-third-line
+    @include textLine($padding-bottom: 80px, $font-weight: 500)
+
+.Header-first-second-line
+    @include textLine($padding-bottom: 20px, $font-weight: 700)
+
+.Header-first-third-line
+    font:
+        family: "Montserrat", sans-serif
+        size: 30px
+
+.Header-link
+    display: flex
+    padding:
+        top: 10px
+        bottom: 50px
+
+.Header-all-link
+    padding: 20px 60px
+    border-radius: 500px
+    @include font($font-size: 17px, $font-weight: 700)
+    font-family: "Montserrat", sans-serif
+    text-decoration: none
+    color: white
+
+.Header-first-link
+    margin-right: 20px
+    background-color: orangered
+
+.Header-second-link
+    margin-left: 20px
+    border: 1px solid white
+
+.Two-phones-wrapper
+    text-align: center
+
+.Two-phones
+    margin: -50px 0 0 0
+
+.Window2
+    min-height: 80vh
+
+.Hr
+    min-height: 2px
+    max-width: 50%
+    margin: 0 auto
+    border: none
+    radius: 5%
+    background-color: #e4e4e4
+
+.Main-head
+    padding-top: 40px
+    text-align: center
+    @include font($font-size: 30px, $font-weight: 600)
+
+.Main-content-1
+    @include flex($justify-content:space-evenly, $align-items: center)
+    flex-flow: row nowrap
+    padding-top: 150px
+
+.Phone
+    filter: drop-shadow(50px 30px 150px rgba(46, 4, 4, 0.15))
+
+.Main-text-1
+    display: flex
+    flex-direction: column
+    max-width: 33%
+
+.Main-first-line
+    padding-bottom: 20px
+    text-decoration: none
+    color: orangered
+
+.Main-first-second-line
+    font-weight: 700
+
+.Main-second-line
+    padding-bottom: 25px
+    font-size: 27px
+
+.Main-third-line
+    @include font($font-size: 15px, $font-weight: 500)
+    color: grey
+
+.Main-mobile-third-line
+    display: none
+
+.Main-all-line
+    font-family: "Montserrat", sans-serif
+
+.Window3
+    min-height: 110vh
+
+.Main-content-2
+    @include flex($justify-content:space-evenly, $align-items: center)
+    flex-flow: row-reverse nowrap
+    padding-top: 150px
+
+.Main-mobile-content-2
+    display: none
+
+.Main-text-2
+    display: flex
+    flex-direction: column
+    max-width: 33%
+
+.Window4
+    min-height: 100vh
+
+.Footer-desktop-main
+    @include flex($flex-direction: column, $justify-content:center, $align-items: center)
+    min-height: 80vh
+    background: url(../images/Background_picture.png) center no-repeat
+        size: cover
+
+.Footer-mobile-main
+    display: none
+
+.Footer-all-line
+    color: white
+    font-family: "Montserrat", sans-serif
+
+.Footer-first-line
+    padding-bottom: 70px
+    @include font($font-size: 45px, $font-weight: 700)
+
+.Footer-second-line
+    padding-bottom: 120px
+    @include font($font-size: 30px, $font-weight: 500)
+
+.Footer-all-link
+    padding: 25px 50px
+    border-radius: 15px
+    text-decoration: none
+    color: white
+    @include font($font-size: 20px, $font-weight: 700)
+    font-family: "Montserrat", sans-serif
+
+.Footer-first-link
+    margin-right: 10px
+    background-color: orangered
+
+.Footer-second-link
+    margin-left: 10px
+    border: 1px solid
+
+.Footer-foot
+    min-height: 20vh
+    @include flex($justify-content: space-around, $align-items: center)
+
+.Footer-icon
+    @include flex($justify-content: center, $align-items: start)
+
+.Footer-all-image
+    min-width: 40px
+
+.Footer-second-image
+    margin: 0 20px 0
