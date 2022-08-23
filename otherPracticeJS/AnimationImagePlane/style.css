@@ -1,9 +1,0 @@
-
-  #flyjet {
-    transition: all, 3s;
-    width: 40px;
-    /* -> 400px */
-    height: 24px;
-    /* -> 240px */
-    cursor: pointer;
-  }
