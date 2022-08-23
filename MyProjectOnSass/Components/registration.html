@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/registration.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="Window1">
+      <div class="Register">
+        <h1 class="Head">Registration from Bella Onoje</h1>
+        <img
+          class="Image"
+          src="./assets/images/Bella_Olonje_logo.png"
+          alt="Bella_Olonje_logo"
+        />
+        <form class="Form" action="/" method="GET">
+          <input
+            class="Size_block"
+            name="login"
+            type="text"
+            placeholder="Name"
+            required
+            autofocus
+            pattern="^[A-Za-z0-9_-]{3,15}$"
+            title="Введите имя используя латинские буквы и цифры от 3 до 15 символов"
+          />
+          <input
+            class="Size_block"
+            name="email"
+            type="email"
+            placeholder="Email"
+            required
+            pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+"
+            title="Введите свой почтовый ящик"
+          />
+          <input
+            class="Size_block"
+            name="password"
+            type="password"
+            placeholder="Password"
+            required
+            pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$"
+            title="Введите пароль не менее 8 символов. Минимум одна большая буква, маленькая буква и цифра."
+          />
+          <p class="Confirm">
+            <input
+              class="Checkbox"
+              type="checkbox"
+              required
+              title="Без подтверждения соглашения с правилами - регистрация невозможна!"
+            />
+            I agree with rules.
+          </p>
+          <button class="Confirm_button">Register</button>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>
