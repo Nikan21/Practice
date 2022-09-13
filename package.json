@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/Nikan21/Practice/issues"
   },
-  "homepage": "https://github.com/Nikan21/Practice#readme"
+  "homepage": "https://github.com/Nikan21/Practice#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.0"
+  }
 }
