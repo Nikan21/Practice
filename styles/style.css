@@ -10758,5 +10758,8 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.first-header {
+  height: 50px;
+}
 
 /*# sourceMappingURL=style.css.map */
