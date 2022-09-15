@@ -5264,8 +5264,8 @@ textarea.form-control-lg {
 
 .modal-backdrop {
   --bs-backdrop-zindex: 1050;
-  --bs-backdrop-bg: #000;
-  --bs-backdrop-opacity: 0.5;
+  --bs-backdrop-bg: rgba(0, 0, 0, 0.664);
+  --bs-backdrop-opacity: 1;
   position: fixed;
   top: 0;
   left: 0;
@@ -6510,13 +6510,13 @@ textarea.form-control-lg {
   z-index: 1040;
   width: 100vw;
   height: 100vh;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0.664);
 }
 .offcanvas-backdrop.fade {
   opacity: 0;
 }
 .offcanvas-backdrop.show {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .offcanvas-header {
@@ -10787,6 +10787,10 @@ textarea.form-control-lg {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
 
+.modal-backdrop {
+  position: static;
+}
+
 .modal-content {
   min-width: 250px;
   max-width: 450px;
@@ -10870,6 +10874,9 @@ textarea.form-control-lg {
 }
 
 .header {
+  position: fixed;
+  left: 0;
+  right: 0;
   height: 50px;
 }
 
@@ -10908,19 +10915,25 @@ textarea.form-control-lg {
   margin-right: 10px;
 }
 
+.header-drop-menu {
+  width: 100%;
+  background-color: #000000;
+}
+
 .header-menu {
+  justify-content: space-evenly;
   height: 100vh;
   margin-top: 4px;
   padding: 20px 40px;
 }
 
-.header-drop-menu {
-  background-color: #000000;
-}
-
 .header-drop-ancor {
   font-size: 18px;
   font-weight: 700;
+}
+
+body {
+  height: 1000vh;
 }
 
 @media (max-width: 390px) {

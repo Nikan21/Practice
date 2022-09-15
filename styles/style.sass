@@ -1,4 +1,6 @@
 $input-padding-x: 40px
+$modal-backdrop-bg: rgba(0, 0, 0, 0.664)
+$modal-backdrop-opacity: 1    
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss'
 
@@ -46,6 +48,9 @@ $input-padding-x: 40px
     border-color: black
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
 
+.modal-backdrop
+    position: static    
+    
 //Modal Window
 .modal-content
     @include minAndMaxWidth($minWidth: 250px, $maxWidth: 450px)
@@ -113,11 +118,14 @@ $input-padding-x: 40px
 
 //Header
 .header
+    position: fixed
+    left: 0
+    right: 0
     height: 50px
     @extend %reset-padding
 
 .header-wrapper
-    height: 40px    
+    height: 40px
 
 .header-button
     margin-left: 10px
@@ -143,17 +151,22 @@ $input-padding-x: 40px
 .navbar-toggler
     margin-right: 10px
 
+.header-drop-menu
+    width: 100%
+    @extend %reset-margin
+    background-color: #000000
+
 .header-menu
+    justify-content: space-evenly
     height: 100vh
     margin-top: 4px
     padding: 20px 40px
 
-.header-drop-menu
-    @extend %reset-margin
-    background-color: #000000
-
 .header-drop-ancor
     @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 700)
+
+body
+    height: 1000vh
 
 @media (max-width: 390px)
     //Modal Window
