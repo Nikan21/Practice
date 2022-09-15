@@ -1,4 +1,236 @@
+$input-padding-x: 40px
+
 @import '../node_modules/bootstrap/scss/bootstrap.scss'
 
-.first-header
+//Extends and Mixins
+%reset-margin
+    margin: 0
+
+%reset-padding
+    padding: 0
+
+@mixin marginAndPadding($margin: 0, $padding: 0)
+    margin: $margin
+    padding: $padding
+
+@mixin widthAndHeight($width: 0px, $height: 0px)
+    width: $width
+    height: $height
+
+@mixin minAndMaxWidth($minWidth: 0px, $maxWidth: 0px)
+    min-width: $minWidth
+    max-width: $maxWidth
+
+@mixin fontSizeAndWeight($fontSize: 0px, $fontWeight: 0)
+    font-size: $fontSize
+    font-weight: $fontWeight
+
+//Common rules
+.container-fluid
+    padding: 0
+
+.row
+    @extend %reset-margin
+
+.col-2,
+.col-3,
+.col-4,
+.col-6,
+.col-8,
+.col-9,
+.col-10,
+.col-12
+    @include marginAndPadding
+
+.form-control:focus
+    border-color: black
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+
+//Modal Window
+.modal-content
+    @include minAndMaxWidth($minWidth: 250px, $maxWidth: 450px)
+    @extend %reset-padding
+
+.modal-header
+    height: 120px
+
+.registration-ubisoft-logo
+    @include widthAndHeight($width: 60px, $height: 60px)
+
+.registration-brand-name
+    @extend %reset-margin
+    @include fontSizeAndWeight($fontSize: 30px, $fontWeight: 900)
+
+.modal-body
+    height: 400px
+    @extend %reset-margin
+    border: 1px solid grey
+
+.modal-first-text
+    font-size: 25px
+
+.modal-second-text
+    font-size: 20px
+
+.input-section
+    margin-bottom: 35px
+
+.email-icon,
+.password-icon
+    position: absolute
+    top: 21px
+    left: 10px
+
+.check-registration-wrapper
+    padding-left: 10px
+
+#saveData
+    @include widthAndHeight($width: 25px, $height: 25px)
+    margin: 2px 0 0 0
+
+.remember-label
+    padding-left: 10px
+    font-size: 20px
+
+.forget-registration-text
+    padding-right: 10px
+    font-size: 20px
+
+.registration-button-submit
+    margin-top: 50px
+
+.modal-footer
+    height: 150px
+    border: 1px solid gray
+
+.registration-hr
+    border: 1px solid black
+
+.privacy-information
+    font-weight: 900
+    text-decoration: none
+    color: #0077e5
+
+//Header
+.header
     height: 50px
+    @extend %reset-padding
+
+.header-wrapper
+    height: 40px    
+
+.header-button
+    margin-left: 10px
+    padding: 3px 12px
+    font-size: 20px
+
+.navbar-brand
+    @include marginAndPadding
+
+.ubisoft-logo
+    @include widthAndHeight($width: 30px, $height: 30px)
+
+.brand-name
+    display: inline-block
+    @extend %reset-margin
+    font-weight: 900
+
+.registration-logo
+    @include minAndMaxWidth($minWidth: 250px, $maxWidth: 500px)
+    height: 100px
+
+//Header menu    
+.navbar-toggler
+    margin-right: 10px
+
+.header-menu
+    height: 100vh
+    margin-top: 4px
+    padding: 20px 40px
+
+.header-drop-menu
+    @extend %reset-margin
+    background-color: #000000
+
+.header-drop-ancor
+    @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 700)
+
+@media (max-width: 390px)
+    //Modal Window
+    .modal-body
+        height: 350px
+
+    .modal-first-text
+        font-size: 20px
+
+    .modal-second-text
+        font-size: 17px
+
+    .check-registration-wrapper
+        display: flex
+
+    #saveData
+        width: 13px
+        height: 13px
+
+    .remember-label
+        padding-left: 10px
+        font-size: 13px
+
+    .forget-registration-text
+        padding-right: 10px
+        font-size: 13px
+
+    .registration-button-submit
+        margin-top: 10px
+
+    .privacy-information
+        font-size: 12px
+
+    //Header
+    .ubisoft-logo
+        margin: 0 auto
+
+    .brand-name
+        display: none
+
+@include media-breakpoint-up(sm)
+    //Modal Window
+    .modal-body
+        height: 420px
+
+    .text-label
+        font-size: 20px
+
+@include media-breakpoint-up(md)
+    //Modal Window
+    .registration-button-submit
+        margin-top: 40px
+
+    .footer-text
+        font-size: 20px
+
+    .privacy-information
+        font-size: 16px
+
+@include media-breakpoint-up(lg)
+    //Header
+    .navbar-brand
+        margin-right: 10px
+
+    //Header menu
+    .header-wrapper-menu
+        justify-content: center
+        height: 50px
+
+    .header-menu
+        align-items: center
+        height: 50px
+        margin-top: 0
+        padding: 0
+
+    .header-drop-ancor
+        padding: 0
+
+@include media-breakpoint-up(xl)
+@include media-breakpoint-up(xxl)

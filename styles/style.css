@@ -1986,7 +1986,7 @@ progress {
 .form-control {
   display: block;
   width: 100%;
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 40px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -2028,9 +2028,9 @@ progress {
   opacity: 1;
 }
 .form-control::file-selector-button {
-  padding: 0.375rem 0.75rem;
-  margin: -0.375rem -0.75rem;
-  margin-inline-end: 0.75rem;
+  padding: 0.375rem 40px;
+  margin: -0.375rem -40px;
+  margin-inline-end: 40px;
   color: #212529;
   background-color: #e9ecef;
   pointer-events: none;
@@ -2128,8 +2128,8 @@ textarea.form-control-lg {
 .form-select {
   display: block;
   width: 100%;
-  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
-  -moz-padding-start: calc(0.75rem - 3px);
+  padding: 0.375rem 120px 0.375rem 40px;
+  -moz-padding-start: 37px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -2137,7 +2137,7 @@ textarea.form-control-lg {
   background-color: #fff;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
   background-repeat: no-repeat;
-  background-position: right 0.75rem center;
+  background-position: right 40px center;
   background-size: 16px 12px;
   border: 1px solid #ced4da;
   border-radius: 0.375rem;
@@ -2155,7 +2155,7 @@ textarea.form-control-lg {
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .form-select[multiple], .form-select[size]:not([size="1"]) {
-  padding-right: 0.75rem;
+  padding-right: 40px;
   background-image: none;
 }
 .form-select:disabled {
@@ -2401,7 +2401,7 @@ textarea.form-control-lg {
   left: 0;
   width: 100%;
   height: 100%;
-  padding: 1rem 0.75rem;
+  padding: 1rem 40px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -2417,7 +2417,7 @@ textarea.form-control-lg {
 }
 .form-floating > .form-control,
 .form-floating > .form-control-plaintext {
-  padding: 1rem 0.75rem;
+  padding: 1rem 40px;
 }
 .form-floating > .form-control::placeholder,
 .form-floating > .form-control-plaintext::placeholder {
@@ -2484,7 +2484,7 @@ textarea.form-control-lg {
 .input-group-text {
   display: flex;
   align-items: center;
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 40px;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
@@ -2516,7 +2516,7 @@ textarea.form-control-lg {
 
 .input-group-lg > .form-select,
 .input-group-sm > .form-select {
-  padding-right: 3rem;
+  padding-right: 160px;
 }
 
 .input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
@@ -2592,9 +2592,9 @@ textarea.form-control-lg {
   border-color: #198754;
 }
 .was-validated .form-select:valid:not([multiple]):not([size]), .was-validated .form-select:valid:not([multiple])[size="1"], .form-select.is-valid:not([multiple]):not([size]), .form-select.is-valid:not([multiple])[size="1"] {
-  padding-right: 4.125rem;
+  padding-right: 220px;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.7l-4 4.6c-.43.5-.8.4-1.1.1z'/%3e%3c/svg%3e");
-  background-position: right 0.75rem center, center right 2.25rem;
+  background-position: right 40px center, center right 120px;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 .was-validated .form-select:valid:focus, .form-select.is-valid:focus {
@@ -2685,9 +2685,9 @@ textarea.form-control-lg {
   border-color: #dc3545;
 }
 .was-validated .form-select:invalid:not([multiple]):not([size]), .was-validated .form-select:invalid:not([multiple])[size="1"], .form-select.is-invalid:not([multiple]):not([size]), .form-select.is-invalid:not([multiple])[size="1"] {
-  padding-right: 4.125rem;
+  padding-right: 220px;
   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"), url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
-  background-position: right 0.75rem center, center right 2.25rem;
+  background-position: right 40px center, center right 120px;
   background-size: 16px 12px, calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
 }
 .was-validated .form-select:invalid:focus, .form-select.is-invalid:focus {
@@ -10758,8 +10758,245 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.first-header {
+.header-drop-menu, .brand-name, .modal-body, .registration-brand-name, .row {
+  margin: 0;
+}
+
+.header, .modal-content {
+  padding: 0;
+}
+
+.container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+  padding: 0;
+}
+
+.col-2,
+.col-3,
+.col-4,
+.col-6,
+.col-8,
+.col-9,
+.col-10,
+.col-12 {
+  margin: 0;
+  padding: 0;
+}
+
+.form-control:focus {
+  border-color: black;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.modal-content {
+  min-width: 250px;
+  max-width: 450px;
+}
+
+.modal-header {
+  height: 120px;
+}
+
+.registration-ubisoft-logo {
+  width: 60px;
+  height: 60px;
+}
+
+.registration-brand-name {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.modal-body {
+  height: 400px;
+  border: 1px solid grey;
+}
+
+.modal-first-text {
+  font-size: 25px;
+}
+
+.modal-second-text {
+  font-size: 20px;
+}
+
+.input-section {
+  margin-bottom: 35px;
+}
+
+.email-icon,
+.password-icon {
+  position: absolute;
+  top: 21px;
+  left: 10px;
+}
+
+.check-registration-wrapper {
+  padding-left: 10px;
+}
+
+#saveData {
+  width: 25px;
+  height: 25px;
+  margin: 2px 0 0 0;
+}
+
+.remember-label {
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+.forget-registration-text {
+  padding-right: 10px;
+  font-size: 20px;
+}
+
+.registration-button-submit {
+  margin-top: 50px;
+}
+
+.modal-footer {
+  height: 150px;
+  border: 1px solid gray;
+}
+
+.registration-hr {
+  border: 1px solid black;
+}
+
+.privacy-information {
+  font-weight: 900;
+  text-decoration: none;
+  color: #0077e5;
+}
+
+.header {
   height: 50px;
+}
+
+.header-wrapper {
+  height: 40px;
+}
+
+.header-button {
+  margin-left: 10px;
+  padding: 3px 12px;
+  font-size: 20px;
+}
+
+.navbar-brand {
+  margin: 0;
+  padding: 0;
+}
+
+.ubisoft-logo {
+  width: 30px;
+  height: 30px;
+}
+
+.brand-name {
+  display: inline-block;
+  font-weight: 900;
+}
+
+.registration-logo {
+  min-width: 250px;
+  max-width: 500px;
+  height: 100px;
+}
+
+.navbar-toggler {
+  margin-right: 10px;
+}
+
+.header-menu {
+  height: 100vh;
+  margin-top: 4px;
+  padding: 20px 40px;
+}
+
+.header-drop-menu {
+  background-color: #000000;
+}
+
+.header-drop-ancor {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+@media (max-width: 390px) {
+  .modal-body {
+    height: 350px;
+  }
+  .modal-first-text {
+    font-size: 20px;
+  }
+  .modal-second-text {
+    font-size: 17px;
+  }
+  .check-registration-wrapper {
+    display: flex;
+  }
+  #saveData {
+    width: 13px;
+    height: 13px;
+  }
+  .remember-label {
+    padding-left: 10px;
+    font-size: 13px;
+  }
+  .forget-registration-text {
+    padding-right: 10px;
+    font-size: 13px;
+  }
+  .registration-button-submit {
+    margin-top: 10px;
+  }
+  .privacy-information {
+    font-size: 12px;
+  }
+  .ubisoft-logo {
+    margin: 0 auto;
+  }
+  .brand-name {
+    display: none;
+  }
+}
+@media (min-width: 576px) {
+  .modal-body {
+    height: 420px;
+  }
+  .text-label {
+    font-size: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .registration-button-submit {
+    margin-top: 40px;
+  }
+  .footer-text {
+    font-size: 20px;
+  }
+  .privacy-information {
+    font-size: 16px;
+  }
+}
+@media (min-width: 992px) {
+  .navbar-brand {
+    margin-right: 10px;
+  }
+  .header-wrapper-menu {
+    justify-content: center;
+    height: 50px;
+  }
+  .header-menu {
+    align-items: center;
+    height: 50px;
+    margin-top: 0;
+    padding: 0;
+  }
+  .header-drop-ancor {
+    padding: 0;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
