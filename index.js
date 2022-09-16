@@ -29,11 +29,23 @@ function changeHeader(event) {
 const headerToggler = document.querySelector(".header-toggler");
 const headerMenu = document.querySelector(".header-menu");
 
+window.addEventListener("resize", checkWidthForCheckHeaderMenu);
+
+function checkWidthForCheckHeaderMenu(event) {
+  widthWindow = document.documentElement.clientWidth;
+
+  if(widthWindow <= 992) {
+    headerToggler.addEventListener("click", checkHeaderMenu);
+    window.removeEventListener("resize", checkWidthForCheckHeaderMenu);
+  }
+}
+
 headerToggler.addEventListener("click", checkHeaderMenu);
 
 function checkHeaderMenu(event) {
   let imageWidth = headerMenu.offsetWidth + "px";
   let imageHeight = headerMenu.offsetHeight - 50 + "px";
+
   if (!headerToggler.classList.contains("collapsed")) {
     headerMenu.style.backgroundSize = `${imageWidth} ${imageHeight}`;
     window.addEventListener("resize", changeBackgroundHeaderImage);
@@ -42,7 +54,6 @@ function checkHeaderMenu(event) {
   }
 
   function changeBackgroundHeaderImage(event) {
-    console.log(headerToggler);
     imageWidth = headerMenu.offsetWidth + "px";
     imageHeight = headerMenu.offsetHeight - 50 + "px";
     headerMenu.style.backgroundSize = `${imageWidth} ${imageHeight}`;
