@@ -10909,10 +10909,8 @@ body {
   font-weight: 900;
 }
 
-.registration-logo {
-  min-width: 250px;
-  max-width: 500px;
-  height: 100px;
+.header-toggler-cross {
+  display: none;
 }
 
 .header-toggler {

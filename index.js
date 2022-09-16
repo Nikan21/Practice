@@ -49,6 +49,26 @@ function checkHeaderMenu(event) {
   }
 }
 
+//Dynamic animation header toggler
+const headerTogglerBurger = document.querySelector(".header-toggler-burger");
+const headerTogglerCross = document.querySelector(".header-toggler-cross");
+headerTogglerBurger.classList.add("test");
+
+headerToggler.addEventListener("click", changeToggler);
+
+function changeToggler(event) {
+  if (!event.target.closest("button")) return;
+
+  if (!headerToggler.classList.contains("collapsed")) {
+    headerTogglerBurger.style.display = "none";
+    headerTogglerCross.style.display = "block";
+  }else{
+    headerTogglerCross.style.display = "none";
+    headerTogglerBurger.style.display = "block";
+  }
+}
+
+//Remove events
 if (widthWindow >= 992) {
   headerToggler.removeEventListener("click", checkHeaderMenu);
 }
