@@ -10766,6 +10766,10 @@ textarea.form-control-lg {
   padding: 0;
 }
 
+body {
+  height: 4459px;
+}
+
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
   padding: 0;
 }
@@ -10911,29 +10915,31 @@ textarea.form-control-lg {
   height: 100px;
 }
 
-.navbar-toggler {
+.header-toggler {
   margin-right: 10px;
 }
 
 .header-drop-menu {
   width: 100%;
-  background-color: #000000;
+  background-color: #212529;
 }
 
 .header-menu {
-  justify-content: space-evenly;
   height: 100vh;
   margin-top: 4px;
   padding: 20px 40px;
+  background-image: url("../images/altair.jpg");
+  background-repeat: no-repeat;
 }
 
 .header-drop-ancor {
   font-size: 18px;
   font-weight: 700;
+  color: white;
 }
 
-body {
-  height: 1000vh;
+.header-drop-ancor:hover {
+  color: green;
 }
 
 @media (max-width: 390px) {
@@ -10967,11 +10973,19 @@ body {
   .privacy-information {
     font-size: 12px;
   }
+  .header-button {
+    font-size: 16px;
+  }
   .ubisoft-logo {
     margin: 0 auto;
   }
   .brand-name {
     display: none;
+  }
+  .header-menu {
+    align-items: center;
+    height: 300px;
+    background-image: url("");
   }
 }
 @media (min-width: 576px) {
@@ -10979,6 +10993,9 @@ body {
     height: 420px;
   }
   .text-label {
+    font-size: 20px;
+  }
+  .header-drop-ancor {
     font-size: 20px;
   }
 }
@@ -10992,6 +11009,9 @@ body {
   .privacy-information {
     font-size: 16px;
   }
+  .header-drop-ancor {
+    font-size: 22px;
+  }
 }
 @media (min-width: 992px) {
   .navbar-brand {
@@ -11002,10 +11022,12 @@ body {
     height: 50px;
   }
   .header-menu {
+    justify-content: space-evenly;
     align-items: center;
     height: 50px;
     margin-top: 0;
     padding: 0;
+    background-image: url("");
   }
   .header-drop-ancor {
     padding: 0;
