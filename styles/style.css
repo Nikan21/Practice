@@ -10926,8 +10926,8 @@ body {
   height: 100vh;
   margin-top: 4px;
   padding: 20px 40px;
-  background-image: url("../images/altair.jpg");
   background-repeat: no-repeat;
+  transition: background-image 1s;
 }
 
 .header-drop-ancor {

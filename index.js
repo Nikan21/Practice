@@ -47,6 +47,15 @@ function checkHeaderMenu(event) {
   let imageHeight = headerMenu.offsetHeight - 50 + "px";
 
   if (!headerToggler.classList.contains("collapsed")) {
+    if (widthWindow <= 390) headerMenu.style.backgroundImage = "url('./images/noImage.jpg')"
+    else if(widthWindow > 390 && widthWindow <= 490) headerMenu.style.backgroundImage = "url('./images/altair.jpg')"
+    else if(widthWindow > 490 && widthWindow <= 590) headerMenu.style.backgroundImage = "url('./images/ezio.jpg')"
+    else if(widthWindow > 590 && widthWindow <= 690) headerMenu.style.backgroundImage = "url('./images/connor.jpg')"
+    else if(widthWindow > 690 && widthWindow <= 790) headerMenu.style.backgroundImage = "url('./images/edward.jpg')"
+    else if(widthWindow > 790 && widthWindow <= 890) headerMenu.style.backgroundImage = "url('./images/arno.jpg')"
+    else if(widthWindow > 890 && widthWindow <= 992) headerMenu.style.backgroundImage = "url('./images/shay.png')"
+    else headerMenu.style.backgroundImage = "url('./noImage.jpg')"
+    
     headerMenu.style.backgroundSize = `${imageWidth} ${imageHeight}`;
     window.addEventListener("resize", changeBackgroundHeaderImage);
   } else {
@@ -56,7 +65,16 @@ function checkHeaderMenu(event) {
   function changeBackgroundHeaderImage(event) {
     imageWidth = headerMenu.offsetWidth + "px";
     imageHeight = headerMenu.offsetHeight - 50 + "px";
-    headerMenu.style.backgroundSize = `${imageWidth} ${imageHeight}`;
+    headerMenu.style.backgroundSize = `${imageWidth} ${imageHeight}`
+
+    if (widthWindow <= 390) headerMenu.style.backgroundImage = "url('./images/noImage.jpg')"
+    else if(widthWindow > 390 && widthWindow <= 490) headerMenu.style.backgroundImage = "url('./images/altair.jpg')"
+    else if(widthWindow > 490 && widthWindow <= 590) headerMenu.style.backgroundImage = "url('./images/ezio.jpg')"
+    else if(widthWindow > 590 && widthWindow <= 690) headerMenu.style.backgroundImage = "url('./images/connor.jpg')"
+    else if(widthWindow > 690 && widthWindow <= 790) headerMenu.style.backgroundImage = "url('./images/edward.jpg')"
+    else if(widthWindow > 790 && widthWindow <= 890) headerMenu.style.backgroundImage = "url('./images/arno.jpg')"
+    else if(widthWindow > 890 && widthWindow <= 992) headerMenu.style.backgroundImage = "url('./images/shay.png')"
+    else headerMenu.style.backgroundImage = "url('./noImage.jpg')"
   }
 }
 
