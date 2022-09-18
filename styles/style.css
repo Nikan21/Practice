@@ -10770,6 +10770,12 @@ body {
   height: 4459px;
 }
 
+h1, .h1,
+h3,
+.h3 {
+  color: black;
+}
+
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
   padding: 0;
 }
@@ -10930,6 +10936,11 @@ body {
   transition: background-image 1s;
 }
 
+#all-games {
+  margin-top: -55px;
+  padding-top: 55px;
+}
+
 .header-drop-ancor {
   font-size: 18px;
   font-weight: 700;
@@ -10964,6 +10975,14 @@ body {
 
 .main-greetings-text {
   font-size: 18px;
+}
+
+.window-2 {
+  margin-top: 125px;
+}
+
+.main-window-2-header {
+  font-size: 25px;
 }
 
 @media (max-width: 390px) {
@@ -11009,7 +11028,6 @@ body {
   .header-menu {
     align-items: center;
     height: 300px;
-    background-image: url("");
   }
   .main-greetings-wrapper {
     max-width: 270px;
@@ -11022,6 +11040,12 @@ body {
   }
   .main-greetings-text {
     font-size: 17px;
+  }
+  .window-2 {
+    margin-top: 75px;
+  }
+  .main-window-2-header {
+    font-size: 20px;
   }
 }
 @media (min-width: 576px) {
@@ -11043,6 +11067,12 @@ body {
   }
   .main-greetings-text {
     font-size: 22px;
+  }
+  .window-2 {
+    margin-top: 175px;
+  }
+  .main-window-2-header {
+    font-size: 28px;
   }
 }
 @media (min-width: 768px) {
@@ -11068,6 +11098,12 @@ body {
   }
   .main-greetings-text {
     font-size: 23px;
+  }
+  .window-2 {
+    margin-top: 200px;
+  }
+  .main-window-2-header {
+    font-size: 35px;
   }
 }
 @media (min-width: 992px) {
@@ -11101,6 +11137,12 @@ body {
   .main-greetings-text {
     font-size: 26px;
   }
+  .window-2 {
+    margin-top: 175px;
+  }
+  .main-window-2-header {
+    font-size: 38px;
+  }
 }
 @media (min-width: 1200px) {
   .main-greetings-wrapper {
@@ -11114,6 +11156,12 @@ body {
   .main-greetings-text {
     font-size: 40px;
   }
+  .window-2 {
+    margin-top: 300px;
+  }
+  .main-window-2-header {
+    font-size: 45px;
+  }
 }
 @media (min-width: 1400px) {
   .main-greetings-wrapper {
@@ -11125,6 +11173,12 @@ body {
   }
   .main-greetings-text {
     font-size: 30px;
+  }
+  .window-2 {
+    margin-top: 125px;
+  }
+  .main-window-2-header {
+    font-size: 50px;
   }
 }
 
