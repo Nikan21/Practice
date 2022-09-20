@@ -47,19 +47,19 @@ function checkHeaderMenu(event) {
 
   if (!headerToggler.classList.contains("collapsed")) {
     if (widthWindow <= 390)
-      headerMenu.style.backgroundImage = "url('./images/noImage.jpg')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/noImage.jpg')";
     else if (widthWindow > 390 && widthWindow <= 490)
-      headerMenu.style.backgroundImage = "url('./images/altair.jpg')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/altair.jpg')";
     else if (widthWindow > 490 && widthWindow <= 590)
-      headerMenu.style.backgroundImage = "url('./images/ezio.jpg')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/ezio.jpg')";
     else if (widthWindow > 590 && widthWindow <= 690)
-      headerMenu.style.backgroundImage = "url('./images/jacob.jpg')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/jacob.jpg')";
     else if (widthWindow > 690 && widthWindow <= 790)
-      headerMenu.style.backgroundImage = "url('./images/edward.jpg')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/edward.jpg')";
     else if (widthWindow > 790 && widthWindow <= 890)
-      headerMenu.style.backgroundImage = "url('./images/shay.png')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/shay.png')";
     else if (widthWindow > 890 && widthWindow <= 992)
-      headerMenu.style.backgroundImage = "url('./images/allAssassins.jpg')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/allAssassins.jpg')";
 
     headerMenu.style.backgroundSize = `${imageWidth} ${imageHeight}`;
     window.addEventListener("resize", changeBackgroundHeaderImage);
@@ -73,19 +73,19 @@ function checkHeaderMenu(event) {
     headerMenu.style.backgroundSize = `${imageWidth} ${imageHeight}`;
 
     if (widthWindow <= 390)
-      headerMenu.style.backgroundImage = "url('./images/noImage.jpg')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/noImage.jpg')";
     else if (widthWindow > 390 && widthWindow <= 490)
-      headerMenu.style.backgroundImage = "url('./images/altair.jpg')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/altair.jpg')";
     else if (widthWindow > 490 && widthWindow <= 590)
-      headerMenu.style.backgroundImage = "url('./images/ezio.jpg')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/ezio.jpg')";
     else if (widthWindow > 590 && widthWindow <= 690)
-      headerMenu.style.backgroundImage = "url('./images/jacob.jpg')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/jacob.jpg')";
     else if (widthWindow > 690 && widthWindow <= 790)
-      headerMenu.style.backgroundImage = "url('./images/edward.jpg')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/edward.jpg')";
     else if (widthWindow > 790 && widthWindow <= 890)
-      headerMenu.style.backgroundImage = "url('./images/shay.png')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/shay.png')";
     else if (widthWindow > 890 && widthWindow <= 992)
-      headerMenu.style.backgroundImage = "url('./images/allAssassins.jpg')";
+      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/allAssassins.jpg')";
   }
 }
 
