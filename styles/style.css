@@ -10905,6 +10905,10 @@ h3,
   padding: 0;
 }
 
+.header-brand-wrapper {
+  margin-right: 30px;
+}
+
 .ubisoft-logo {
   width: 30px;
   height: 30px;
@@ -11019,8 +11023,11 @@ h3,
   .header-button {
     font-size: 16px;
   }
+  .header-brand-wrapper {
+    margin-right: 0;
+  }
   .ubisoft-logo {
-    margin: 0 auto;
+    margin-right: 12px;
   }
   .brand-name {
     display: none;
