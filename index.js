@@ -17,7 +17,6 @@ function changeHeader(event) {
   widthWindow = document.documentElement.clientWidth;
   heightWindow = document.documentElement.clientHeight;
 
-  //Adaptive change header elements
   if (widthWindow >= 992) {
     headerWrapperMenu.after(ubisoftHeaderLogo);
   } else {
@@ -90,7 +89,7 @@ function checkHeaderMenu(event) {
   }
 }
 
-//Dynamic animation header toggler
+//Dynamic change header toggler
 const headerTogglerBurger = document.querySelector(".header-toggler-burger");
 const headerTogglerCross = document.querySelector(".header-toggler-cross");
 headerTogglerBurger.classList.add("test");
@@ -107,11 +106,6 @@ function changeToggler(event) {
     headerTogglerCross.style.display = "none";
     headerTogglerBurger.style.display = "block";
   }
-}
-
-//Remove events
-if (widthWindow >= 992) {
-  headerToggler.removeEventListener("click", checkHeaderMenu);
 }
 
 //Dynamic style for .modal-backdrop(height)
