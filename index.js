@@ -108,6 +108,21 @@ function changeToggler(event) {
   }
 }
 
+//Hide header-wrapper-menu when click on ancor
+headerWrapperMenu.addEventListener("click", closeMenu);
+
+function closeMenu(event) {
+  const headerWrapperMenuClass = new bootstrap.Collapse(headerWrapperMenu, {
+    toggle: false,
+  });
+
+  if (!event.target.closest("a")) return;
+
+  headerWrapperMenuClass.hide();
+  headerTogglerCross.style.display = "none";
+  headerTogglerBurger.style.display = "block";
+}
+
 //Dynamic style for .modal-backdrop(height)
 headerButton.addEventListener("click", dynamicModalBack);
 
