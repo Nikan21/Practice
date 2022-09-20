@@ -10772,7 +10772,9 @@ body {
 
 h1, .h1,
 h3,
-.h3 {
+.h3,
+h6,
+.h6 {
   color: black;
 }
 
@@ -10888,6 +10890,7 @@ h3,
   left: 0;
   right: 0;
   height: 50px;
+  z-index: 2;
 }
 
 .header-wrapper {
@@ -11049,10 +11052,39 @@ h3,
     font-size: 17px;
   }
   .window-2 {
+    justify-content: center;
     margin-top: 75px;
   }
   .main-window-2-header {
     font-size: 20px;
+  }
+  .first-carousel-card {
+    min-width: 250px;
+    align-items: center;
+    margin-top: 35px;
+    border: 0;
+  }
+  .first-carousel-card-header {
+    border: 0;
+  }
+  .first-carousel-image {
+    width: 250px;
+    height: 350px;
+  }
+  .first-carousel-card-body {
+    border: 0;
+  }
+  .first-carousel-card-body-text {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  .first-carousel-footer-icons {
+    width: 20px;
+    height: 20px;
+  }
+  .first-carousel-footer-icons-double {
+    width: 24px;
+    height: 24px;
   }
 }
 @media (min-width: 576px) {
