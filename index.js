@@ -133,39 +133,119 @@ function dynamicModalBack(event) {
   modalBackdrop.style.height = windowFullHeight + "px";
 }
 
-
 //First carousel
-const width = 250
-let count = 1
-let position = 0
 const left = document.querySelector('.first-carousel-prev')
 const right = document.querySelector('.first-carousel-next')
 const list = document.querySelector('.first-carousel-gallery')
 const listElems = document.querySelectorAll('.first-carousel-card')
-const lastSlide = -width * (listElems.length - count)
+const firstCarouselImage = document.querySelectorAll('.first-carousel-image')
+let widthSlider = 250 
+let countSlides = 1 
+let positionSlider = 0 
+let margin = 0
+let lastSlidePosition = (-widthSlider - margin) * (listElems.length - countSlides)
 
-list.style.transition = 'transform 250ms'
+list.style.transition = 'transform 500ms'
+
+if(widthWindow > 390 && widthWindow < 576) {
+  widthSlider = 300
+}else if(widthWindow >= 576 && widthWindow < 768){
+  widthSlider = 265
+  countSlides = 2
+  margin = 20
+  lastSlidePosition = (-widthSlider - margin / countSlides) * (listElems.length - countSlides)
+}else if(widthWindow >= 768 && widthWindow < 992){
+  widthSlider = 350
+  countSlides = 2
+  margin = 40
+  lastSlidePosition = (-widthSlider - margin / countSlides) * (listElems.length - countSlides)
+}else if(widthWindow >= 992 && widthWindow < 1200){
+  widthSlider = 235
+  countSlides = 4
+  margin = 40
+  lastSlidePosition = (-widthSlider - margin / countSlides) * (listElems.length - countSlides)
+}else if(widthWindow >= 1200 && widthWindow < 1400){
+  widthSlider = 275
+  countSlides = 4
+  margin = 80
+  lastSlidePosition = (-widthSlider - margin / countSlides) * (listElems.length - countSlides)
+}else{
+  widthSlider = 325
+  countSlides = 4
+  margin = 80
+  lastSlidePosition = (-widthSlider - margin / countSlides) * (listElems.length - countSlides)
+}
+
 
 left.addEventListener('click', moveLeft)
 
 function moveLeft() {
-  if(position === 0) {
-    list.style.transform = `translateX(${lastSlide}px)`
-    position = lastSlide
+  if(positionSlider === 0) {
+    list.style.transform = `translateX(${lastSlidePosition}px)`
+    positionSlider = lastSlidePosition
   }else{ 
-  position += width * count
-  list.style.transform = `translateX(${position}px)`
+    positionSlider += widthSlider * countSlides + margin
+  list.style.transform = `translateX(${positionSlider}px)`
   }
 }
 
 right.addEventListener('click', moveRight)
 
 function moveRight() {
-  if(position === lastSlide) {
+  if(positionSlider === lastSlidePosition) {
     list.style.transform = `translateX(${0}px)`
-    position = 0
+    positionSlider = 0
   }else{ 
-  position -= width * count
-  list.style.transform = `translateX(${position}px)`
+    positionSlider -= widthSlider * countSlides + margin
+  list.style.transform = `translateX(${positionSlider}px)`
   }
 }
+
+window.addEventListener("resize", changeSizeSlider);
+
+function changeSizeSlider(event) {
+  if(widthWindow <= 390) {
+    widthSlider = 250 
+    countSlides = 1
+    margin = 0
+    lastSlidePosition = (-widthSlider - margin / countSlides) * (listElems.length - countSlides)
+  }else if(widthWindow > 390 && widthWindow < 576) {
+    widthSlider = 300 
+    countSlides = 1
+    margin = 0
+    lastSlidePosition = (-widthSlider - margin / countSlides) * (listElems.length - countSlides)
+  }else if(widthWindow >= 576 && widthWindow < 768){
+    widthSlider = 265
+    countSlides = 2
+    margin = 20
+    lastSlidePosition = (-widthSlider - margin / countSlides) * (listElems.length - countSlides)
+  }else if(widthWindow >= 768 && widthWindow < 992){
+    widthSlider = 350
+    countSlides = 2
+    margin = 40
+    lastSlidePosition = (-widthSlider - margin / countSlides) * (listElems.length - countSlides)
+  }else if(widthWindow >= 992 && widthWindow < 1200){
+    widthSlider = 235
+    countSlides = 4
+    margin = 40
+    lastSlidePosition = (-widthSlider - margin / countSlides) * (listElems.length - countSlides)
+  }else if(widthWindow >= 1200 && widthWindow < 1400){
+    widthSlider = 275
+    countSlides = 4
+    margin = 80
+    lastSlidePosition = (-widthSlider - margin / countSlides) * (listElems.length - countSlides)
+  }else{
+    widthSlider = 325
+    countSlides = 4
+    margin = 80
+    lastSlidePosition = (-widthSlider - margin / countSlides) * (listElems.length - countSlides)
+  } 
+
+  list.style.transform = `translateX(${0}px)`
+  positionSlider = 0
+
+  firstCarouselImage.forEach( (item) => {
+    item.style.width = widthSlider + 'px'
+  })
+}
+

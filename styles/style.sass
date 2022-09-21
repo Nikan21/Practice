@@ -209,9 +209,77 @@ h6
 
 .window-2
     margin-top: 125px
+    justify-content: center
 
 .main-window-2-header
     font-size: 25px
+
+//First carousel
+.first-carousel-arrow
+    position: absolute
+    top: 175px
+    padding: 3px 8px
+    background: #ddd
+    border-radius: 15px
+    border: 1px solid gray
+    font-size: 27px
+    line-height: 24px
+
+.first-carousel-arrow:hover
+    background: green
+    border: 1px solid white
+    color: white
+    cursor: pointer
+
+.first-carousel-prev
+    left: 7px
+
+.first-carousel-next
+    right: 7px
+
+.first-carousel-wrapper
+    position: relative
+    width: 300px
+    padding: 0
+
+.first-carousel-inner-wrapper
+    overflow: hidden
+
+.first-carousel-gallery
+    display: flex
+    width: 9999px
+
+.first-carousel-link
+    text-decoration: none
+
+.first-carousel-card
+    display: flex
+    align-items: center
+    width: 300px
+    height: 450px
+    border: 0
+
+.first-carousel-image
+    width: 300px
+    height: 350px
+
+.first-carousel-card-header
+    border: 0
+
+.first-carousel-card-body
+    border: 0
+
+.first-carousel-card-body-text
+    margin-top: 10px
+    font-size: 18px
+
+.first-carousel-footer-icons
+    width: 20px
+    height: 20px
+
+.first-carousel-footer-icons-double
+    width: 24px
+    height: 24px
 
 @media (max-width: 390px)
     //Modal Window
@@ -285,7 +353,7 @@ h6
     //First carousel
     .first-carousel-arrow
         position: absolute
-        top: 180px
+        top: 175px
         padding: 3px 8px
         background: #ddd
         border-radius: 15px
@@ -294,7 +362,9 @@ h6
         line-height: 24px
 
     .first-carousel-arrow:hover
-        background: #ccc
+        background: green
+        border: 1px solid white
+        color: white
         cursor: pointer
 
     .first-carousel-prev
@@ -314,6 +384,9 @@ h6
     .first-carousel-gallery
         display: flex
         width: 9999px
+
+    .first-carousel-link
+        text-decoration: none
 
     .first-carousel-card
         display: flex
@@ -373,6 +446,17 @@ h6
     .main-window-2-header
         font-size: 28px
 
+    //First carousel
+    .first-carousel-wrapper
+        width: 550px
+
+    .first-carousel-card
+        width: 265px
+        margin: 0 5px
+
+    .first-carousel-image
+        width: 265px
+
 @include media-breakpoint-up(md)
     //Modal Window
     .registration-button-submit
@@ -405,6 +489,42 @@ h6
 
     .main-window-2-header
         font-size: 35px
+
+    //First carousel
+    .first-carousel-arrow
+        font-size: 29px
+        line-height: 23px
+
+    .first-carousel-prev
+        left: 15px
+
+    .first-carousel-next
+        right: 15px
+
+    .first-carousel-wrapper
+        width: 740px
+
+    .first-carousel-card
+        width: 350px
+        margin: 0 10px
+
+    .first-carousel-card-header
+        padding: 0
+
+    .first-carousel-image
+        width: 350px
+
+    .first-carousel-card-body-text
+        margin-top: 15px
+        font-size: 20px
+
+    .first-carousel-footer-icons
+        width: 25px
+        height: 25px
+
+    .first-carousel-footer-icons-double
+        width: 30px
+        height: 30px
 
 @include media-breakpoint-up(lg)
     //Header
@@ -446,6 +566,20 @@ h6
     .main-window-2-header
         font-size: 38px
 
+    //First carousel
+    .first-carousel-wrapper
+        margin-top: 20px
+
+    .first-carousel-wrapper
+        width: 980px
+
+    .first-carousel-card
+        width: 235px
+        margin: 0 5px
+
+    .first-carousel-image
+        width: 235px
+
 @include media-breakpoint-up(xl)
     //Main
     .main-greetings-wrapper
@@ -465,6 +599,32 @@ h6
     .main-window-2-header
         font-size: 45px
 
+    //First carousel
+    .first-carousel-wrapper
+        margin-top: 25px
+
+    .first-carousel-wrapper
+        width: 1180px
+
+    .first-carousel-card
+        width: 275px
+        margin: 0 10px
+
+    .first-carousel-image
+        width: 275px
+
+    .first-carousel-card-body-text
+        margin-top: 20px
+        font-size: 22px
+
+    .first-carousel-footer-icons
+        width: 30px
+        height: 30px
+
+    .first-carousel-footer-icons-double
+        width: 35px
+        height: 35px
+
 @include media-breakpoint-up(xxl)
     //Main
     .main-greetings-wrapper
@@ -482,3 +642,44 @@ h6
 
     .main-window-2-header
         font-size: 50px
+
+    //First carousel
+    .first-carousel-arrow
+        top: 250px
+        padding: 3px 10px
+        border-radius: 21px
+        font-size: 39px
+        line-height: 38px
+
+    .first-carousel-prev
+        left: 25px
+
+    .first-carousel-next
+        right: 25px
+
+    .first-carousel-wrapper
+        margin-top: 45px
+
+    .first-carousel-wrapper
+        width: 1390px
+
+    .first-carousel-card
+        width: 325px
+        height: 580px
+        margin: 0 10px
+
+    .first-carousel-image
+        width: 325px
+        height: 500px
+
+    .first-carousel-card-body-text
+        margin-top: 15px
+        font-size: 23px
+
+    .first-carousel-footer-icons
+        width: 30px
+        height: 30px
+
+    .first-carousel-footer-icons-double
+        width: 35px
+        height: 35px
