@@ -132,3 +132,40 @@ function dynamicModalBack(event) {
 
   modalBackdrop.style.height = windowFullHeight + "px";
 }
+
+
+//First carousel
+const width = 250
+let count = 1
+let position = 0
+const left = document.querySelector('.first-carousel-prev')
+const right = document.querySelector('.first-carousel-next')
+const list = document.querySelector('.first-carousel-gallery')
+const listElems = document.querySelectorAll('.first-carousel-card')
+const lastSlide = -width * (listElems.length - count)
+
+list.style.transition = 'transform 250ms'
+
+left.addEventListener('click', moveLeft)
+
+function moveLeft() {
+  if(position === 0) {
+    list.style.transform = `translateX(${lastSlide}px)`
+    position = lastSlide
+  }else{ 
+  position += width * count
+  list.style.transform = `translateX(${position}px)`
+  }
+}
+
+right.addEventListener('click', moveRight)
+
+function moveRight() {
+  if(position === lastSlide) {
+    list.style.transform = `translateX(${0}px)`
+    position = 0
+  }else{ 
+  position -= width * count
+  list.style.transform = `translateX(${position}px)`
+  }
+}
