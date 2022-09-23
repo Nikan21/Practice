@@ -47,19 +47,26 @@ function checkHeaderMenu(event) {
 
   if (!headerToggler.classList.contains("collapsed")) {
     if (widthWindow <= 390)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/noImage.jpg')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/noImage.jpg')";
     else if (widthWindow > 390 && widthWindow <= 490)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/altair.jpg')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/altair.jpg')";
     else if (widthWindow > 490 && widthWindow <= 590)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/ezio.jpg')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/ezio.jpg')";
     else if (widthWindow > 590 && widthWindow <= 690)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/jacob.jpg')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/jacob.jpg')";
     else if (widthWindow > 690 && widthWindow <= 790)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/edward.jpg')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/edward.jpg')";
     else if (widthWindow > 790 && widthWindow <= 890)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/shay.png')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/shay.png')";
     else if (widthWindow > 890 && widthWindow <= 992)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/allAssassins.jpg')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/allAssassins.jpg')";
 
     headerMenu.style.backgroundSize = `${imageWidth} ${imageHeight}`;
     window.addEventListener("resize", changeBackgroundHeaderImage);
@@ -73,19 +80,26 @@ function checkHeaderMenu(event) {
     headerMenu.style.backgroundSize = `${imageWidth} ${imageHeight}`;
 
     if (widthWindow <= 390)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/noImage.jpg')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/noImage.jpg')";
     else if (widthWindow > 390 && widthWindow <= 490)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/altair.jpg')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/altair.jpg')";
     else if (widthWindow > 490 && widthWindow <= 590)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/ezio.jpg')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/ezio.jpg')";
     else if (widthWindow > 590 && widthWindow <= 690)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/jacob.jpg')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/jacob.jpg')";
     else if (widthWindow > 690 && widthWindow <= 790)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/edward.jpg')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/edward.jpg')";
     else if (widthWindow > 790 && widthWindow <= 890)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/shay.png')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/shay.png')";
     else if (widthWindow > 890 && widthWindow <= 992)
-      headerMenu.style.backgroundImage = "url('./images/Header/headerBackground/allAssassins.jpg')";
+      headerMenu.style.backgroundImage =
+        "url('./images/Header/headerBackground/allAssassins.jpg')";
   }
 }
 
@@ -134,118 +148,302 @@ function dynamicModalBack(event) {
 }
 
 //First carousel
-const firstCarouselPrev = document.querySelector('.first-carousel-prev')
-const firstCarouselNext = document.querySelector('.first-carousel-next')
-const firstCarouselGallery = document.querySelector('.first-carousel-gallery')
-const firstCarouselCard = document.querySelectorAll('.first-carousel-card')
-const firstCarouselImage = document.querySelectorAll('.first-carousel-image')
-let widthSlider = 250 
-let countSlides = 1 
-let positionSlider = 0 
-let margin = 0
-let lastSlidePosition = (-widthSlider - margin) * (firstCarouselCard.length - countSlides)
+const firstCarouselPrev = document.querySelector(".first-carousel-prev");
+const firstCarouselNext = document.querySelector(".first-carousel-next");
+const firstCarouselGallery = document.querySelector(".first-carousel-gallery");
+const firstCarouselCard = document.querySelectorAll(".first-carousel-card");
+const firstCarouselImage = document.querySelectorAll(".first-carousel-image");
+let firstWidthSlider, firstCountSlides, firstMargin, firstLastSlidePosition;
+let firstPositionSlider = 0;
 
-firstCarouselGallery.style.transition = 'transform 500ms'
+firstCarouselGallery.style.transition = "transform 500ms";
 
-if(widthWindow > 390 && widthWindow < 576) {
-  widthSlider = 300
-}else if(widthWindow >= 576 && widthWindow < 768){
-  widthSlider = 265
-  countSlides = 2
-  margin = 20
-  lastSlidePosition = (-widthSlider - margin / countSlides) * (firstCarouselCard.length - countSlides)
-}else if(widthWindow >= 768 && widthWindow < 992){
-  widthSlider = 350
-  countSlides = 2
-  margin = 40
-  lastSlidePosition = (-widthSlider - margin / countSlides) * (firstCarouselCard.length - countSlides)
-}else if(widthWindow >= 992 && widthWindow < 1200){
-  widthSlider = 235
-  countSlides = 4
-  margin = 40
-  lastSlidePosition = (-widthSlider - margin / countSlides) * (firstCarouselCard.length - countSlides)
-}else if(widthWindow >= 1200 && widthWindow < 1400){
-  widthSlider = 275
-  countSlides = 4
-  margin = 80
-  lastSlidePosition = (-widthSlider - margin / countSlides) * (firstCarouselCard.length - countSlides)
-}else{
-  widthSlider = 325
-  countSlides = 4
-  margin = 80
-  lastSlidePosition = (-widthSlider - margin / countSlides) * (firstCarouselCard.length - countSlides)
+if (widthWindow <= 390) {
+  firstWidthSlider = 250;
+  firstCountSlides = 1;
+  firstMargin = 0;
+  firstLastSlidePosition =
+    (-firstWidthSlider - firstMargin / firstCountSlides) *
+    (firstCarouselCard.length - firstCountSlides);
+} else if (widthWindow > 390 && widthWindow < 576) {
+  firstWidthSlider = 300;
+  firstCountSlides = 1;
+  firstMargin = 0;
+  firstLastSlidePosition =
+    (-firstWidthSlider - firstMargin / firstCountSlides) *
+    (firstCarouselCard.length - firstCountSlides);
+} else if (widthWindow >= 576 && widthWindow < 768) {
+  firstWidthSlider = 265;
+  firstCountSlides = 2;
+  firstMargin = 20;
+  firstLastSlidePosition =
+    (-firstWidthSlider - firstMargin / firstCountSlides) *
+    (firstCarouselCard.length - firstCountSlides);
+} else if (widthWindow >= 768 && widthWindow < 992) {
+  firstWidthSlider = 350;
+  firstCountSlides = 2;
+  firstMargin = 40;
+  firstLastSlidePosition =
+    (-firstWidthSlider - firstMargin / firstCountSlides) *
+    (firstCarouselCard.length - firstCountSlides);
+} else if (widthWindow >= 992 && widthWindow < 1200) {
+  firstWidthSlider = 235;
+  firstCountSlides = 4;
+  firstMargin = 40;
+  firstLastSlidePosition =
+    (-firstWidthSlider - firstMargin / firstCountSlides) *
+    (firstCarouselCard.length - firstCountSlides);
+} else if (widthWindow >= 1200 && widthWindow < 1400) {
+  firstWidthSlider = 275;
+  firstCountSlides = 4;
+  firstMargin = 80;
+  firstLastSlidePosition =
+    (-firstWidthSlider - firstMargin / firstCountSlides) *
+    (firstCarouselCard.length - firstCountSlides);
+} else {
+  firstWidthSlider = 325;
+  firstCountSlides = 4;
+  firstMargin = 80;
+  firstLastSlidePosition =
+    (-firstWidthSlider - firstMargin / firstCountSlides) *
+    (firstCarouselCard.length - firstCountSlides);
 }
 
-
-firstCarouselPrev.addEventListener('click', moveLeft)
+console.log(firstCarouselPrev);
+firstCarouselPrev.addEventListener("click", moveLeft);
 
 function moveLeft() {
-  if(positionSlider === 0) {
-    firstCarouselGallery.style.transform = `translateX(${lastSlidePosition}px)`
-    positionSlider = lastSlidePosition
-  }else{ 
-    positionSlider += widthSlider * countSlides + margin
-  firstCarouselGallery.style.transform = `translateX(${positionSlider}px)`
+  if (firstPositionSlider === 0) {
+    firstCarouselGallery.style.transform = `translateX(${firstLastSlidePosition}px)`;
+    firstPositionSlider = firstLastSlidePosition;
+  } else {
+    firstPositionSlider += firstWidthSlider * firstCountSlides + firstMargin;
+    firstCarouselGallery.style.transform = `translateX(${firstPositionSlider}px)`;
   }
 }
 
-firstCarouselNext.addEventListener('click', moveRight)
+firstCarouselNext.addEventListener("click", moveRight);
 
 function moveRight() {
-  if(positionSlider === lastSlidePosition) {
-    firstCarouselGallery.style.transform = `translateX(${0}px)`
-    positionSlider = 0
-  }else{ 
-    positionSlider -= widthSlider * countSlides + margin
-  firstCarouselGallery.style.transform = `translateX(${positionSlider}px)`
+  if (firstPositionSlider === firstLastSlidePosition) {
+    firstCarouselGallery.style.transform = `translateX(${0}px)`;
+    firstPositionSlider = 0;
+  } else {
+    firstPositionSlider -= firstWidthSlider * firstCountSlides + firstMargin;
+    firstCarouselGallery.style.transform = `translateX(${firstPositionSlider}px)`;
   }
 }
 
 window.addEventListener("resize", changeSizeSlider);
 
 function changeSizeSlider(event) {
-  if(widthWindow <= 390) {
-    widthSlider = 250 
-    countSlides = 1
-    margin = 0
-    lastSlidePosition = (-widthSlider - margin / countSlides) * (firstCarouselCard.length - countSlides)
-  }else if(widthWindow > 390 && widthWindow < 576) {
-    widthSlider = 300 
-    countSlides = 1
-    margin = 0
-    lastSlidePosition = (-widthSlider - margin / countSlides) * (firstCarouselCard.length - countSlides)
-  }else if(widthWindow >= 576 && widthWindow < 768){
-    widthSlider = 265
-    countSlides = 2
-    margin = 20
-    lastSlidePosition = (-widthSlider - margin / countSlides) * (firstCarouselCard.length - countSlides)
-  }else if(widthWindow >= 768 && widthWindow < 992){
-    widthSlider = 350
-    countSlides = 2
-    margin = 40
-    lastSlidePosition = (-widthSlider - margin / countSlides) * (firstCarouselCard.length - countSlides)
-  }else if(widthWindow >= 992 && widthWindow < 1200){
-    widthSlider = 235
-    countSlides = 4
-    margin = 40
-    lastSlidePosition = (-widthSlider - margin / countSlides) * (firstCarouselCard.length - countSlides)
-  }else if(widthWindow >= 1200 && widthWindow < 1400){
-    widthSlider = 275
-    countSlides = 4
-    margin = 80
-    lastSlidePosition = (-widthSlider - margin / countSlides) * (firstCarouselCard.length - countSlides)
-  }else{
-    widthSlider = 325
-    countSlides = 4
-    margin = 80
-    lastSlidePosition = (-widthSlider - margin / countSlides) * (firstCarouselCard.length - countSlides)
-  } 
+  if (widthWindow <= 390) {
+    firstWidthSlider = 250;
+    firstCountSlides = 1;
+    firstMargin = 0;
+    firstLastSlidePosition =
+      (-firstWidthSlider - firstMargin / firstCountSlides) *
+      (firstCarouselCard.length - firstCountSlides);
+  } else if (widthWindow > 390 && widthWindow < 576) {
+    firstWidthSlider = 300;
+    firstCountSlides = 1;
+    firstMargin = 0;
+    firstLastSlidePosition =
+      (-firstWidthSlider - firstMargin / firstCountSlides) *
+      (firstCarouselCard.length - firstCountSlides);
+  } else if (widthWindow >= 576 && widthWindow < 768) {
+    firstWidthSlider = 265;
+    firstCountSlides = 2;
+    firstMargin = 20;
+    firstLastSlidePosition =
+      (-firstWidthSlider - firstMargin / firstCountSlides) *
+      (firstCarouselCard.length - firstCountSlides);
+  } else if (widthWindow >= 768 && widthWindow < 992) {
+    firstWidthSlider = 350;
+    firstCountSlides = 2;
+    firstMargin = 40;
+    firstLastSlidePosition =
+      (-firstWidthSlider - firstMargin / firstCountSlides) *
+      (firstCarouselCard.length - firstCountSlides);
+  } else if (widthWindow >= 992 && widthWindow < 1200) {
+    firstWidthSlider = 235;
+    firstCountSlides = 4;
+    firstMargin = 40;
+    firstLastSlidePosition =
+      (-firstWidthSlider - firstMargin / firstCountSlides) *
+      (firstCarouselCard.length - firstCountSlides);
+  } else if (widthWindow >= 1200 && widthWindow < 1400) {
+    firstWidthSlider = 275;
+    firstCountSlides = 4;
+    firstMargin = 80;
+    firstLastSlidePosition =
+      (-firstWidthSlider - firstMargin / firstCountSlides) *
+      (firstCarouselCard.length - firstCountSlides);
+  } else {
+    firstWidthSlider = 325;
+    firstCountSlides = 4;
+    firstMargin = 80;
+    firstLastSlidePosition =
+      (-firstWidthSlider - firstMargin / firstCountSlides) *
+      (firstCarouselCard.length - firstCountSlides);
+  }
 
-  firstCarouselGallery.style.transform = `translateX(${0}px)`
-  positionSlider = 0
+  firstCarouselGallery.style.transform = `translateX(${0}px)`;
+  firstPositionSlider = 0;
 
-  firstCarouselImage.forEach( (item) => {
-    item.style.width = widthSlider + 'px'
-  })
+  firstCarouselImage.forEach((item) => {
+    item.style.width = firstWidthSlider + "px";
+  });
 }
 
+//Second carousel
+const secondCarouselPrev = document.querySelector(".second-carousel-prev");
+const secondCarouselNext = document.querySelector(".second-carousel-next");
+const secondCarouselGallery = document.querySelector(
+  ".second-carousel-gallery"
+);
+const secondCarouselCard = document.querySelectorAll(".second-carousel-card");
+const secondCarouselImage = document.querySelectorAll(".second-carousel-image");
+let secondWidthSlider, secondCountSlides, secondMargin, secondLastSlidePosition;
+let secondPositionSlider = 0;
+
+secondCarouselGallery.style.transition = "transform 500ms";
+
+if (widthWindow <= 390) {
+  secondWidthSlider = 250;
+  secondCountSlides = 1;
+  secondMargin = 0;
+  secondLastSlidePosition =
+    (-secondWidthSlider - secondMargin / secondCountSlides) *
+    (secondCarouselCard.length - secondCountSlides);
+} else if (widthWindow > 390 && widthWindow < 576) {
+  secondWidthSlider = 300;
+  secondCountSlides = 1;
+  secondMargin = 0;
+  secondLastSlidePosition =
+    (-secondWidthSlider - secondMargin / secondCountSlides) *
+    (secondCarouselCard.length - CountSlides);
+} else if (widthWindow >= 576 && widthWindow < 768) {
+  secondWidthSlider = 265;
+  secondCountSlides = 2;
+  secondMargin = 20;
+  secondLastSlidePosition =
+    (-secondWidthSlider - secondMargin / secondCountSlides) *
+    (secondCarouselCard.length - secondCountSlides);
+} else if (widthWindow >= 768 && widthWindow < 992) {
+  secondWidthSlider = 350;
+  secondCountSlides = 2;
+  secondMargin = 40;
+  secondLastSlidePosition =
+    (-secondWidthSlider - secondMargin / secondCountSlides) *
+    (secondCarouselCard.length - secondCountSlides);
+} else if (widthWindow >= 992 && widthWindow < 1200) {
+  secondWidthSlider = 235;
+  secondCountSlides = 4;
+  secondMargin = 40;
+  secondLastSlidePosition =
+    (-secondWidthSlider - secondMargin / secondCountSlides) *
+    (secondCarouselCard.length - secondCountSlides);
+} else if (widthWindow >= 1200 && widthWindow < 1400) {
+  secondWidthSlider = 275;
+  secondCountSlides = 4;
+  secondMargin = 80;
+  secondLastSlidePosition =
+    (-secondWidthSlider - secondMargin / secondCountSlides) *
+    (secondCarouselCard.length - secondCountSlides);
+} else {
+  secondWidthSlider = 325;
+  secondCountSlides = 4;
+  secondMargin = 80;
+  secondLastSlidePosition =
+    (-secondWidthSlider - secondMargin / secondCountSlides) *
+    (secondCarouselCard.length - secondCountSlides);
+}
+
+secondCarouselPrev.addEventListener("click", moveLeftA);
+
+function moveLeftA() {
+  if (secondPositionSlider === 0) {
+    secondCarouselGallery.style.transform = `translateX(${secondLastSlidePosition}px)`;
+    secondPositionSlider = secondLastSlidePosition;
+  } else {
+    secondPositionSlider +=
+      secondWidthSlider * secondCountSlides + secondMargin;
+    secondCarouselGallery.style.transform = `translateX(${secondPositionSlider}px)`;
+  }
+}
+
+secondCarouselNext.addEventListener("click", moveRightA);
+
+function moveRightA() {
+  if (secondPositionSlider === secondLastSlidePosition) {
+    secondCarouselGallery.style.transform = `translateX(${0}px)`;
+    secondPositionSlider = 0;
+  } else {
+    secondPositionSlider -=
+      secondWidthSlider * secondCountSlides + secondMargin;
+    secondCarouselGallery.style.transform = `translateX(${secondPositionSlider}px)`;
+  }
+}
+
+window.addEventListener("resize", changeSizeSlider);
+
+function changeSizeSlider(event) {
+  if (widthWindow <= 390) {
+    secondWidthSlider = 250;
+    secondCountSlides = 1;
+    secondMargin = 0;
+    secondLastSlidePosition =
+      (-secondWidthSlider - secondMargin / secondCountSlides) *
+      (secondCarouselCard.length - secondCountSlides);
+  } else if (widthWindow > 390 && widthWindow < 576) {
+    secondWidthSlider = 300;
+    secondCountSlides = 1;
+    secondMargin = 0;
+    secondLastSlidePosition =
+      (-secondWidthSlider - secondMargin / secondCountSlides) *
+      (secondCarouselCard.length - secondCountSlides);
+  } else if (widthWindow >= 576 && widthWindow < 768) {
+    secondWidthSlider = 265;
+    secondCountSlides = 2;
+    secondMargin = 20;
+    secondLastSlidePosition =
+      (-secondWidthSlider - secondMargin / secondCountSlides) *
+      (secondCarouselCard.length - secondCountSlides);
+  } else if (widthWindow >= 768 && widthWindow < 992) {
+    secondWidthSlider = 350;
+    secondCountSlides = 2;
+    secondMargin = 40;
+    secondLastSlidePosition =
+      (-secondWidthSlider - secondMargin / secondCountSlides) *
+      (secondCarouselCard.length - secondCountSlides);
+  } else if (widthWindow >= 992 && widthWindow < 1200) {
+    secondWidthSlider = 235;
+    secondCountSlides = 4;
+    secondMargin = 40;
+    secondLastSlidePosition =
+      (-secondWidthSlider - secondMargin / secondCountSlides) *
+      (secondCarouselCard.length - secondCountSlides);
+  } else if (widthWindow >= 1200 && widthWindow < 1400) {
+    secondWidthSlider = 275;
+    secondCountSlides = 4;
+    secondMargin = 80;
+    secondLastSlidePosition =
+      (-secondWidthSlider - secondMargin / secondCountSlides) *
+      (secondCarouselCard.length - secondCountSlides);
+  } else {
+    secondWidthSlider = 325;
+    secondCountSlides = 4;
+    secondMargin = 80;
+    secondLastSlidePosition =
+      (-secondWidthSlider - secondMargin / secondCountSlides) *
+      (secondCarouselCard.length - secondCountSlides);
+  }
+
+  secondCarouselGallery.style.transform = `translateX(${0}px)`;
+  secondPositionSlider = 0;
+
+  secondCarouselImage.forEach((item) => {
+    item.style.width = secondWidthSlider + "px";
+  });
+}
