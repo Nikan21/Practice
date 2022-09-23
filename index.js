@@ -210,9 +210,9 @@ if (widthWindow <= 390) {
 }
 
 console.log(firstCarouselPrev);
-firstCarouselPrev.addEventListener("click", moveLeft);
+firstCarouselPrev.addEventListener("click", moveLeftFirstSlider);
 
-function moveLeft() {
+function moveLeftFirstSlider() {
   if (firstPositionSlider === 0) {
     firstCarouselGallery.style.transform = `translateX(${firstLastSlidePosition}px)`;
     firstPositionSlider = firstLastSlidePosition;
@@ -222,9 +222,9 @@ function moveLeft() {
   }
 }
 
-firstCarouselNext.addEventListener("click", moveRight);
+firstCarouselNext.addEventListener("click", moveRightFirstSlider);
 
-function moveRight() {
+function moveRightFirstSlider() {
   if (firstPositionSlider === firstLastSlidePosition) {
     firstCarouselGallery.style.transform = `translateX(${0}px)`;
     firstPositionSlider = 0;
@@ -307,6 +307,17 @@ const secondCarouselImage = document.querySelectorAll(".second-carousel-image");
 let secondWidthSlider, secondCountSlides, secondMargin, secondLastSlidePosition;
 let secondPositionSlider = 0;
 
+const secondCarouselCurrentPage = document.querySelector(
+  ".second-carousel-current-page"
+);
+let secondCarouselFirstPage = 1;
+let secondCarouselLastPage = secondCarouselCard.length;
+secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
+
+const secondCarouselButtonWrapper = document.querySelector(
+  ".second-carousel-button-wrapper"
+);
+
 secondCarouselGallery.style.transition = "transform 500ms";
 
 if (widthWindow <= 390) {
@@ -316,13 +327,19 @@ if (widthWindow <= 390) {
   secondLastSlidePosition =
     (-secondWidthSlider - secondMargin / secondCountSlides) *
     (secondCarouselCard.length - secondCountSlides);
+  secondCarouselLastPage = secondCarouselLastPage / secondCountSlides;
+  secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
+  secondCarouselButtonWrapper.style.display = "none";
 } else if (widthWindow > 390 && widthWindow < 576) {
   secondWidthSlider = 300;
   secondCountSlides = 1;
   secondMargin = 0;
   secondLastSlidePosition =
     (-secondWidthSlider - secondMargin / secondCountSlides) *
-    (secondCarouselCard.length - CountSlides);
+    (secondCarouselCard.length - secondCountSlides);
+  secondCarouselLastPage = secondCarouselLastPage / secondCountSlides;
+  secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
+  secondCarouselButtonWrapper.style.display = "none";
 } else if (widthWindow >= 576 && widthWindow < 768) {
   secondWidthSlider = 265;
   secondCountSlides = 2;
@@ -330,6 +347,9 @@ if (widthWindow <= 390) {
   secondLastSlidePosition =
     (-secondWidthSlider - secondMargin / secondCountSlides) *
     (secondCarouselCard.length - secondCountSlides);
+  secondCarouselLastPage = secondCarouselLastPage / secondCountSlides;
+  secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
+  secondCarouselButtonWrapper.style.display = "none";
 } else if (widthWindow >= 768 && widthWindow < 992) {
   secondWidthSlider = 350;
   secondCountSlides = 2;
@@ -337,6 +357,9 @@ if (widthWindow <= 390) {
   secondLastSlidePosition =
     (-secondWidthSlider - secondMargin / secondCountSlides) *
     (secondCarouselCard.length - secondCountSlides);
+  secondCarouselLastPage = secondCarouselLastPage / secondCountSlides;
+  secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
+  secondCarouselButtonWrapper.style.display = "none";
 } else if (widthWindow >= 992 && widthWindow < 1200) {
   secondWidthSlider = 235;
   secondCountSlides = 4;
@@ -344,6 +367,10 @@ if (widthWindow <= 390) {
   secondLastSlidePosition =
     (-secondWidthSlider - secondMargin / secondCountSlides) *
     (secondCarouselCard.length - secondCountSlides);
+  secondCarouselLastPage = secondCarouselLastPage / secondCountSlides;
+  secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
+  secondCarouselCurrentPage.style.display = "none";
+  secondCarouselButtonWrapper.style.display = "block";
 } else if (widthWindow >= 1200 && widthWindow < 1400) {
   secondWidthSlider = 275;
   secondCountSlides = 4;
@@ -351,6 +378,10 @@ if (widthWindow <= 390) {
   secondLastSlidePosition =
     (-secondWidthSlider - secondMargin / secondCountSlides) *
     (secondCarouselCard.length - secondCountSlides);
+  secondCarouselLastPage = secondCarouselLastPage / secondCountSlides;
+  secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
+  secondCarouselCurrentPage.style.display = "none";
+  secondCarouselButtonWrapper.style.display = "block";
 } else {
   secondWidthSlider = 325;
   secondCountSlides = 4;
@@ -358,32 +389,44 @@ if (widthWindow <= 390) {
   secondLastSlidePosition =
     (-secondWidthSlider - secondMargin / secondCountSlides) *
     (secondCarouselCard.length - secondCountSlides);
+  secondCarouselLastPage = secondCarouselLastPage / secondCountSlides;
+  secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
+  secondCarouselCurrentPage.style.display = "none";
+  secondCarouselButtonWrapper.style.display = "block";
 }
 
-secondCarouselPrev.addEventListener("click", moveLeftA);
+secondCarouselPrev.addEventListener("click", moveLeftSecondSlider);
 
-function moveLeftA() {
+function moveLeftSecondSlider() {
   if (secondPositionSlider === 0) {
     secondCarouselGallery.style.transform = `translateX(${secondLastSlidePosition}px)`;
     secondPositionSlider = secondLastSlidePosition;
+    secondCarouselFirstPage = secondCarouselLastPage;
   } else {
     secondPositionSlider +=
       secondWidthSlider * secondCountSlides + secondMargin;
     secondCarouselGallery.style.transform = `translateX(${secondPositionSlider}px)`;
+    secondCarouselFirstPage -= 1;
   }
+
+  secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
 }
 
-secondCarouselNext.addEventListener("click", moveRightA);
+secondCarouselNext.addEventListener("click", moveRightSecondSlider);
 
-function moveRightA() {
+function moveRightSecondSlider() {
   if (secondPositionSlider === secondLastSlidePosition) {
     secondCarouselGallery.style.transform = `translateX(${0}px)`;
     secondPositionSlider = 0;
+    secondCarouselFirstPage = 1;
   } else {
     secondPositionSlider -=
       secondWidthSlider * secondCountSlides + secondMargin;
     secondCarouselGallery.style.transform = `translateX(${secondPositionSlider}px)`;
+    secondCarouselFirstPage += 1;
   }
+
+  secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
 }
 
 window.addEventListener("resize", changeSizeSlider);
@@ -396,6 +439,9 @@ function changeSizeSlider(event) {
     secondLastSlidePosition =
       (-secondWidthSlider - secondMargin / secondCountSlides) *
       (secondCarouselCard.length - secondCountSlides);
+    secondCarouselLastPage = 12;
+    secondCarouselCurrentPage.style.display = "block";
+    secondCarouselButtonWrapper.style.display = "none";
   } else if (widthWindow > 390 && widthWindow < 576) {
     secondWidthSlider = 300;
     secondCountSlides = 1;
@@ -403,6 +449,9 @@ function changeSizeSlider(event) {
     secondLastSlidePosition =
       (-secondWidthSlider - secondMargin / secondCountSlides) *
       (secondCarouselCard.length - secondCountSlides);
+    secondCarouselLastPage = 12;
+    secondCarouselCurrentPage.style.display = "block";
+    secondCarouselButtonWrapper.style.display = "none";
   } else if (widthWindow >= 576 && widthWindow < 768) {
     secondWidthSlider = 265;
     secondCountSlides = 2;
@@ -410,6 +459,9 @@ function changeSizeSlider(event) {
     secondLastSlidePosition =
       (-secondWidthSlider - secondMargin / secondCountSlides) *
       (secondCarouselCard.length - secondCountSlides);
+    secondCarouselLastPage = 6;
+    secondCarouselCurrentPage.style.display = "block";
+    secondCarouselButtonWrapper.style.display = "none";
   } else if (widthWindow >= 768 && widthWindow < 992) {
     secondWidthSlider = 350;
     secondCountSlides = 2;
@@ -417,6 +469,9 @@ function changeSizeSlider(event) {
     secondLastSlidePosition =
       (-secondWidthSlider - secondMargin / secondCountSlides) *
       (secondCarouselCard.length - secondCountSlides);
+    secondCarouselLastPage = 6;
+    secondCarouselCurrentPage.style.display = "block";
+    secondCarouselButtonWrapper.style.display = "none";
   } else if (widthWindow >= 992 && widthWindow < 1200) {
     secondWidthSlider = 235;
     secondCountSlides = 4;
@@ -424,6 +479,9 @@ function changeSizeSlider(event) {
     secondLastSlidePosition =
       (-secondWidthSlider - secondMargin / secondCountSlides) *
       (secondCarouselCard.length - secondCountSlides);
+    secondCarouselLastPage = 3;
+    secondCarouselCurrentPage.style.display = "none";
+    secondCarouselButtonWrapper.style.display = "block";
   } else if (widthWindow >= 1200 && widthWindow < 1400) {
     secondWidthSlider = 275;
     secondCountSlides = 4;
@@ -431,6 +489,9 @@ function changeSizeSlider(event) {
     secondLastSlidePosition =
       (-secondWidthSlider - secondMargin / secondCountSlides) *
       (secondCarouselCard.length - secondCountSlides);
+    secondCarouselLastPage = 3;
+    secondCarouselCurrentPage.style.display = "none";
+    secondCarouselButtonWrapper.style.display = "block";
   } else {
     secondWidthSlider = 325;
     secondCountSlides = 4;
@@ -438,12 +499,17 @@ function changeSizeSlider(event) {
     secondLastSlidePosition =
       (-secondWidthSlider - secondMargin / secondCountSlides) *
       (secondCarouselCard.length - secondCountSlides);
+    secondCarouselLastPage = 3;
+    secondCarouselCurrentPage.style.display = "none";
+    secondCarouselButtonWrapper.style.display = "block";
   }
 
   secondCarouselGallery.style.transform = `translateX(${0}px)`;
   secondPositionSlider = 0;
+  secondCarouselFirstPage = 1;
+  secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
 
   secondCarouselImage.forEach((item) => {
-    item.style.width = secondWidthSlider + "px";
+    item.style.width = secondWidthSlider - 10 + "px";
   });
 }

@@ -11127,17 +11127,17 @@ h6,
 }
 
 .window-4 {
-  margin-top: 125px;
   justify-content: center;
+  margin-top: 50px;
 }
 
 .window-4-header {
-  font-size: 25px;
+  font-size: 26px;
 }
 
 .second-carousel-arrow {
   position: absolute;
-  top: 175px;
+  top: 540px;
   padding: 3px 8px;
   background: #ddd;
   border-radius: 15px;
@@ -11159,6 +11159,14 @@ h6,
 
 .second-carousel-next {
   right: 7px;
+}
+
+.second-carousel-current-page {
+  position: absolute;
+  top: 538px;
+  left: 107px;
+  font-size: 25px;
+  font-weight: 500;
 }
 
 .second-carousel-wrapper {
@@ -11184,40 +11192,69 @@ h6,
   display: flex;
   align-items: center;
   width: 300px;
-  height: 450px;
+  height: 580px;
+  margin-top: 10px;
   border: 0;
+}
+
+.second-carousel-card > div {
+  margin: 10px 5px 0px 5px;
 }
 
 .second-carousel-card-header {
   border: 0;
+  padding: 0;
 }
 
 .second-carousel-image {
-  width: 300px;
-  height: 350px;
+  width: 290px;
+  height: 150px;
 }
 
 .second-carousel-card-body {
   border: 0;
 }
 
-.second-carousel-card-body-header-text {
-  margin-top: 10px;
+.second-carousel-card-body-date {
+  margin: 10px 0;
   font-size: 18px;
 }
 
-.second-carousel-footer-icons {
-  width: 20px;
-  height: 20px;
+.second-carousel-card-body-header-text {
+  margin-top: 10px 0;
+  font-size: 21px;
 }
 
-.second-carousel-footer-icons-double {
-  width: 24px;
-  height: 24px;
+.second-carousel-card-body-main-text {
+  margin-bottom: 0;
+  font-size: 17px;
 }
 
-.window-2-link {
-  width: 280px;
+.second-carousel-card-footer {
+  align-self: flex-start;
+}
+
+.second-carousel-card-footer-link {
+  font-size: 22px;
+  text-decoration: none;
+  color: #527e6e;
+}
+
+.second-carousel-card-footer-link:visited {
+  color: #527e6e;
+}
+
+.second-carousel-card-footer-link:hover {
+  text-decoration: underline;
+}
+
+.second-carousel-card-footer-link:active {
+  color: #527e6e;
+}
+
+.window-4-link {
+  width: 326px;
+  margin-top: 15px;
   border-radius: 25px;
   font-size: 22px;
   font-weight: 900;
@@ -11225,7 +11262,7 @@ h6,
   background-color: #527e6e;
 }
 
-.window-2-link:hover {
+.window-4-link:hover {
   border-color: #527e6e;
   color: #527e6e;
   background-color: white;
@@ -11437,6 +11474,13 @@ h6,
   .second-carousel-next {
     right: 7px;
   }
+  .second-carousel-current-page {
+    position: absolute;
+    top: 538px;
+    left: 84px;
+    font-size: 25px;
+    font-weight: 500;
+  }
   .second-carousel-wrapper {
     position: relative;
     width: 250px;
@@ -11503,15 +11547,7 @@ h6,
   .second-carousel-card-footer-link:active {
     color: #527e6e;
   }
-  .second-carousel-footer-icons {
-    width: 20px;
-    height: 20px;
-  }
-  .second-carousel-footer-icons-double {
-    width: 24px;
-    height: 24px;
-  }
-  .window-2-link {
+  .window-4-link {
     width: 250px;
     border-radius: 25px;
     font-size: 20px;
@@ -11519,7 +11555,7 @@ h6,
     color: white;
     background-color: #527e6e;
   }
-  .window-2-link:hover {
+  .window-4-link:hover {
     border-color: #527e6e;
     color: #527e6e;
     background-color: white;
@@ -11569,20 +11605,31 @@ h6,
     font-size: 26px;
   }
   .window-4 {
-    margin-top: 175px;
+    margin-top: 100px;
   }
   .window-4-header {
     font-size: 28px;
+  }
+  .second-carousel-arrow {
+    top: 570px;
+  }
+  .second-carousel-current-page {
+    top: 567px;
+    left: 237px;
   }
   .second-carousel-wrapper {
     width: 550px;
   }
   .second-carousel-card {
     width: 265px;
+    height: 600px;
     margin: 0 5px;
   }
   .second-carousel-image {
-    width: 265px;
+    width: 230px;
+  }
+  .window-4-link {
+    margin-top: 30px;
   }
 }
 @media (min-width: 768px) {
@@ -11652,21 +11699,28 @@ h6,
     height: 30px;
   }
   .window-3 {
-    margin-top: 125px;
+    margin-top: 100px;
   }
   .window-4 {
-    margin-top: 200px;
+    margin-top: 100px;
   }
   .window-4-header {
     margin-bottom: 25px;
     font-size: 38px;
   }
   .second-carousel-arrow {
-    font-size: 29px;
+    padding: 10px 10px;
+    border-radius: 36px;
+    font-size: 50px;
     line-height: 23px;
   }
   .second-carousel-prev {
     left: 15px;
+  }
+  .second-carousel-current-page {
+    top: 567px;
+    left: 334px;
+    font-size: 33px;
   }
   .second-carousel-next {
     right: 15px;
@@ -11684,17 +11738,23 @@ h6,
   .second-carousel-image {
     width: 350px;
   }
-  .second-carousel-card-body-header-text {
-    margin-top: 15px;
+  .second-carousel-card-body-date {
     font-size: 20px;
   }
-  .second-carousel-footer-icons {
-    width: 25px;
-    height: 25px;
+  .second-carousel-card-body-header-text {
+    margin-top: 15px;
+    font-size: 24px;
   }
-  .second-carousel-footer-icons-double {
-    width: 30px;
-    height: 30px;
+  .second-carousel-card-body-main-text {
+    font-size: 19px;
+  }
+  .second-carousel-card-footer-link {
+    font-size: 23px;
+  }
+  .window-4-link {
+    width: 255px;
+    margin-top: 50px;
+    font-size: 26px;
   }
 }
 @media (min-width: 992px) {
@@ -11763,20 +11823,22 @@ h6,
     margin-top: 125px;
   }
   .window-4-header {
+    margin-bottom: 0;
     font-size: 38px;
-  }
-  .second-carousel-wrapper {
-    margin-top: 20px;
   }
   .second-carousel-wrapper {
     width: 980px;
   }
   .second-carousel-card {
     width: 235px;
+    height: 650px;
     margin: 0 5px;
   }
   .second-carousel-image {
     width: 235px;
+  }
+  .second-carousel-card-body-header-text {
+    font-size: 22px;
   }
 }
 @media (min-width: 1200px) {
