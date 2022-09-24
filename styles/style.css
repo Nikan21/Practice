@@ -10943,7 +10943,8 @@ h6,
   transition: background-image 1s;
 }
 
-#all-games {
+#all-games,
+#news {
   margin-top: -55px;
   padding-top: 55px;
 }
@@ -11807,6 +11808,9 @@ h6,
   .first-carousel-image {
     width: 235px;
   }
+  .first-carousel-card-body-text {
+    font-size: 17px;
+  }
   .window-3 {
     background-image: url("../images/Main/mainBackground/historyTourBig.jpg");
     background-position: top;
@@ -11820,7 +11824,7 @@ h6,
     font-size: 34px;
   }
   .window-4 {
-    margin-top: 125px;
+    margin-top: 75px;
   }
   .window-4-header {
     margin-bottom: 0;
@@ -11894,7 +11898,7 @@ h6,
   }
   .first-carousel-card-body-text {
     margin-top: 20px;
-    font-size: 22px;
+    font-size: 20px;
   }
   .first-carousel-footer-icons {
     width: 30px;
@@ -11908,16 +11912,21 @@ h6,
     margin-top: 30px;
   }
   .window-4 {
-    margin-top: 125px;
+    margin-top: 75px;
   }
   .window-4-header {
     font-size: 45px;
   }
-  .second-carousel-wrapper {
-    margin-top: 25px;
+  .second-carousel-arrow {
+    top: 625px;
+  }
+  .second-carousel-button-wrapper {
+    top: 630px;
+    left: 465px;
   }
   .second-carousel-wrapper {
     width: 1180px;
+    margin-top: 25px;
   }
   .second-carousel-card {
     width: 275px;
@@ -12000,17 +12009,18 @@ h6,
     height: 35px;
   }
   .window-2-link {
+    width: 660px;
     margin-top: 50px;
     font-size: 25px;
   }
   .window-4 {
-    margin-top: 125px;
+    margin-top: 100px;
   }
   .window-4-header {
     font-size: 50px;
   }
   .second-carousel-arrow {
-    top: 250px;
+    top: 640px;
     padding: 3px 10px;
     border-radius: 21px;
     font-size: 39px;
@@ -12022,20 +12032,22 @@ h6,
   .second-carousel-next {
     right: 25px;
   }
-  .second-carousel-wrapper {
-    margin-top: 45px;
+  .second-carousel-button-wrapper {
+    top: 650px;
+    left: 575px;
   }
   .second-carousel-wrapper {
     width: 1390px;
+    margin-top: 25px;
   }
   .second-carousel-card {
     width: 325px;
-    height: 585px;
+    height: 650px;
     margin: 0 10px;
   }
   .second-carousel-image {
     width: 325px;
-    height: 500px;
+    height: 200px;
   }
   .second-carousel-card-body-header-text {
     margin-top: 15px;
@@ -12050,7 +12062,8 @@ h6,
     height: 35px;
   }
   .window-4-link {
-    margin-top: 50px;
+    width: 660px;
+    margin-top: 40px;
     font-size: 25px;
   }
 }
