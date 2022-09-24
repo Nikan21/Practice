@@ -209,7 +209,6 @@ if (widthWindow <= 390) {
     (firstCarouselCard.length - firstCountSlides);
 }
 
-console.log(firstCarouselPrev);
 firstCarouselPrev.addEventListener("click", moveLeftFirstSlider);
 
 function moveLeftFirstSlider() {
@@ -234,9 +233,9 @@ function moveRightFirstSlider() {
   }
 }
 
-window.addEventListener("resize", changeSizeSlider);
+window.addEventListener("resize", changeFirstSizeSlider);
 
-function changeSizeSlider(event) {
+function changeFirstSizeSlider(event) {
   if (widthWindow <= 390) {
     firstWidthSlider = 250;
     firstCountSlides = 1;
@@ -317,6 +316,20 @@ secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${second
 const secondCarouselButtonWrapper = document.querySelector(
   ".second-carousel-button-wrapper"
 );
+const allSecondCarouselButton = document.querySelectorAll(
+  ".second-carousel-button"
+);
+const secondCarouselButtonFirst = document.querySelector(
+  ".second-carousel-button-first"
+);
+const secondCarouselButtonSecond = document.querySelector(
+  ".second-carousel-button-second"
+);
+const secondCarouselButtonThird = document.querySelector(
+  ".second-carousel-button-third"
+);
+let currentActiveButton = secondCarouselButtonFirst;
+currentActiveButton.classList.add("active-second-carousel-button");
 
 secondCarouselGallery.style.transition = "transform 500ms";
 
@@ -410,6 +423,21 @@ function moveLeftSecondSlider() {
   }
 
   secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
+
+  let indexPrev;
+  allSecondCarouselButton.forEach((item, index) => {
+    if (item === currentActiveButton) {
+      item.classList.remove("active-second-carousel-button");
+      if (index === 0) {
+        indexPrev = allSecondCarouselButton.length - 1;
+      } else {
+        indexPrev = index - 1;
+      }
+    }
+  });
+  let prevActiveButton = allSecondCarouselButton[indexPrev];
+  currentActiveButton = prevActiveButton;
+  prevActiveButton.classList.add("active-second-carousel-button");
 }
 
 secondCarouselNext.addEventListener("click", moveRightSecondSlider);
@@ -427,11 +455,26 @@ function moveRightSecondSlider() {
   }
 
   secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
+
+  let indexNext;
+  allSecondCarouselButton.forEach((item, index) => {
+    if (item === currentActiveButton) {
+      item.classList.remove("active-second-carousel-button");
+      if (index === allSecondCarouselButton.length - 1) {
+        indexNext = 0;
+      } else {
+        indexNext = index + 1;
+      }
+    }
+  });
+  let nextActiveButton = allSecondCarouselButton[indexNext];
+  currentActiveButton = nextActiveButton;
+  nextActiveButton.classList.add("active-second-carousel-button");
 }
 
-window.addEventListener("resize", changeSizeSlider);
+window.addEventListener("resize", changeSecondSizeSlider);
 
-function changeSizeSlider(event) {
+function changeSecondSizeSlider(event) {
   if (widthWindow <= 390) {
     secondWidthSlider = 250;
     secondCountSlides = 1;
@@ -512,4 +555,37 @@ function changeSizeSlider(event) {
   secondCarouselImage.forEach((item) => {
     item.style.width = secondWidthSlider - 10 + "px";
   });
+}
+
+secondCarouselButtonWrapper.addEventListener("click", clickOnButton);
+
+function clickOnButton(event) {
+  let currentButton = event.target.classList;
+  currentActiveButton = event.target;
+
+  if (currentButton.contains("second-carousel-button-first")) {
+    secondPositionSlider = 0;
+    secondCarouselGallery.style.transform = `translateX(${0}px)`;
+    currentButton.add("active-second-carousel-button");
+    secondCarouselButtonSecond.classList.remove(
+      "active-second-carousel-button"
+    );
+    secondCarouselButtonThird.classList.remove("active-second-carousel-button");
+  } else if (currentButton.contains("second-carousel-button-second")) {
+    secondPositionSlider = 0;
+    secondPositionSlider -=
+      secondWidthSlider * secondCountSlides + secondMargin;
+    secondCarouselGallery.style.transform = `translateX(${secondPositionSlider}px)`;
+    secondCarouselButtonFirst.classList.remove("active-second-carousel-button");
+    secondCarouselButtonSecond.classList.add("active-second-carousel-button");
+    secondCarouselButtonThird.classList.remove("active-second-carousel-button");
+  } else {
+    secondPositionSlider = secondLastSlidePosition;
+    secondCarouselGallery.style.transform = `translateX(${secondLastSlidePosition}px)`;
+    currentButton.add("active-second-carousel-button");
+    secondCarouselButtonFirst.classList.remove("active-second-carousel-button");
+    secondCarouselButtonSecond.classList.remove(
+      "active-second-carousel-button"
+    );
+  }
 }

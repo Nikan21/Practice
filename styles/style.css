@@ -11826,6 +11826,23 @@ h6,
     margin-bottom: 0;
     font-size: 38px;
   }
+  .second-carousel-arrow {
+    top: 660px;
+  }
+  .second-carousel-button-wrapper {
+    position: absolute;
+    top: 670px;
+    left: 370px;
+  }
+  .second-carousel-button {
+    width: 80px;
+    height: 13px;
+    border: 1px solid #c1c1c1;
+    background-color: #c1c1c1;
+  }
+  .active-second-carousel-button {
+    background-color: #6f6f6f;
+  }
   .second-carousel-wrapper {
     width: 980px;
   }
@@ -11839,6 +11856,9 @@ h6,
   }
   .second-carousel-card-body-header-text {
     font-size: 22px;
+  }
+  .window-4-link {
+    margin-top: 70px;
   }
 }
 @media (min-width: 1200px) {
@@ -11918,7 +11938,7 @@ h6,
     width: 35px;
     height: 35px;
   }
-  .window-2-link {
+  .window-4-link {
     margin-top: 30px;
   }
 }
@@ -12029,7 +12049,7 @@ h6,
     width: 35px;
     height: 35px;
   }
-  .window-2-link {
+  .window-4-link {
     margin-top: 50px;
     font-size: 25px;
   }
