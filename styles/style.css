@@ -10944,7 +10944,8 @@ h6,
 }
 
 #all-games,
-#news {
+#news,
+#photo {
   margin-top: -55px;
   padding-top: 55px;
 }
@@ -11269,6 +11270,71 @@ h6,
   background-color: white;
 }
 
+.window-5 {
+  margin-top: 75px;
+}
+
+.window-5-header {
+  font-size: 26px;
+}
+
+.window-5-text {
+  margin-top: 20px;
+  margin-bottom: 0;
+  font-size: 16px;
+}
+
+.photo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 960px;
+  padding: 0;
+  border: 0;
+}
+
+.photo-card {
+  align-items: center;
+  margin-top: 40px;
+  border: 0;
+}
+
+.photo-card-header {
+  padding: 0;
+  border: 0;
+}
+
+.photo-card-image {
+  width: 350px;
+  margin: 0 20px;
+}
+
+.photo-card-body {
+  border: 0;
+}
+
+.photo-card-body-header {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.photo-card-link {
+  width: 220px;
+  margin-top: 10px;
+  border-radius: 25px;
+  font-size: 20px;
+  font-weight: 500;
+  color: white;
+  background-color: #527e6e;
+}
+
+.photo-card-link:hover {
+  border-color: #527e6e;
+  color: #527e6e;
+  background-color: white;
+}
+
 @media (max-width: 390px) {
   .modal-body {
     height: 350px;
@@ -11561,6 +11627,60 @@ h6,
     color: #527e6e;
     background-color: white;
   }
+  .window-5 {
+    margin-top: 50px;
+  }
+  .window-5-header {
+    font-size: 26px;
+  }
+  .window-5-text {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 17px;
+  }
+  .photo-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 960px;
+    padding: 0;
+    border: 0;
+  }
+  .photo-card {
+    align-items: center;
+    margin-top: 40px;
+    border: 0;
+  }
+  .photo-card-header {
+    padding: 0;
+    border: 0;
+  }
+  .photo-card-image {
+    width: 240px;
+    margin: 0 20px;
+  }
+  .photo-card-body {
+    border: 0;
+  }
+  .photo-card-body-header {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 900;
+  }
+  .photo-card-link {
+    width: 220px;
+    margin-top: 10px;
+    border-radius: 25px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    background-color: #527e6e;
+  }
+  .photo-card-link:hover {
+    border-color: #527e6e;
+    color: #527e6e;
+    background-color: white;
+  }
 }
 @media (min-width: 576px) {
   .modal-body {
@@ -11631,6 +11751,19 @@ h6,
   }
   .window-4-link {
     margin-top: 30px;
+  }
+  .window-5-header {
+    font-size: 28px;
+  }
+  .photo-wrapper {
+    height: 1461px;
+  }
+  .photo-card {
+    margin-top: 60px;
+  }
+  .photo-card-image {
+    width: 540px;
+    margin: 0 20px;
   }
 }
 @media (min-width: 768px) {
@@ -11757,6 +11890,26 @@ h6,
     margin-top: 50px;
     font-size: 26px;
   }
+  .window-5-header {
+    font-size: 38px;
+  }
+  .window-5-text {
+    font-size: 19px;
+  }
+  .photo-wrapper {
+    height: 1820px;
+  }
+  .photo-card-image {
+    width: 730px;
+    margin: 0 20px;
+  }
+  .photo-card-body-header {
+    font-size: 26px;
+  }
+  .photo-card-link {
+    width: 230px;
+    font-size: 22px;
+  }
 }
 @media (min-width: 992px) {
   .navbar-brand {
@@ -11849,6 +12002,7 @@ h6,
   }
   .second-carousel-wrapper {
     width: 980px;
+    margin-top: 20px;
   }
   .second-carousel-card {
     width: 235px;
@@ -11862,7 +12016,17 @@ h6,
     font-size: 22px;
   }
   .window-4-link {
-    margin-top: 70px;
+    margin-top: 100px;
+  }
+  .photo-wrapper {
+    height: 2200px;
+  }
+  .photo-card-image {
+    width: 950px;
+    margin: 0 20px;
+  }
+  .photo-card-body-header {
+    font-size: 30px;
   }
 }
 @media (min-width: 1200px) {
@@ -11949,6 +12113,30 @@ h6,
   }
   .window-4-link {
     margin-top: 30px;
+  }
+  .window-5-header {
+    font-size: 45px;
+  }
+  .window-5-text {
+    font-size: 21px;
+  }
+  .photo-wrapper {
+    flex-direction: row;
+    height: 350px;
+  }
+  .photo-card {
+    margin-top: 0;
+  }
+  .photo-card-image {
+    width: 275px;
+    margin: 0 20px;
+  }
+  .photo-card-body-header {
+    font-size: 22px;
+  }
+  .photo-card-link {
+    width: 185px;
+    font-size: 18px;
   }
 }
 @media (min-width: 1400px) {
@@ -12065,6 +12253,25 @@ h6,
     width: 660px;
     margin-top: 40px;
     font-size: 25px;
+  }
+  .window-5-header {
+    font-size: 55px;
+  }
+  .window-5-text {
+    font-size: 25px;
+  }
+  .photo-wrapper {
+    margin-top: 30px;
+  }
+  .photo-card-image {
+    width: 350px;
+  }
+  .photo-card-body-header {
+    font-size: 25px;
+  }
+  .photo-card-link {
+    width: 255px;
+    font-size: 23px;
   }
 }
 
