@@ -11389,6 +11389,43 @@ h6,
   background-color: white;
 }
 
+.window-7 {
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 250px;
+  height: 540px;
+  margin: 20px 15px;
+  margin-top: 80px;
+  background-image: url("../images/Main/mainBackgroundStories/stories.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.window-7-header {
+  margin-top: 5px;
+  margin-bottom: 0;
+  font-size: 28px;
+  font-weight: 900;
+  color: white;
+}
+
+.window-7-link {
+  width: 230px;
+  margin-bottom: 5px;
+  border-radius: 25px;
+  font-size: 22px;
+  font-weight: 900;
+  color: white;
+  background-color: #ab211a;
+}
+
+.window-7-link:hover {
+  border-color: #ab211a;
+  color: #ab211a;
+  background-color: white;
+}
+
 @media (max-width: 390px) {
   .modal-body {
     height: 350px;
@@ -11778,6 +11815,38 @@ h6,
     color: #527e6e;
     background-color: white;
   }
+  .window-7 {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 250px;
+    height: 540px;
+    margin: 20px 15px;
+    margin-top: 60px;
+    background-image: url("../images/Main/mainBackgroundStories/stories.jpeg");
+    background-position: center;
+  }
+  .window-7-header {
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: 900;
+    color: white;
+  }
+  .window-7-link {
+    width: 230px;
+    margin-bottom: 5px;
+    border-radius: 25px;
+    font-size: 22px;
+    font-weight: 900;
+    color: white;
+    background-color: #ab211a;
+  }
+  .window-7-link:hover {
+    border-color: #ab211a;
+    color: #ab211a;
+    background-color: white;
+  }
 }
 @media (min-width: 576px) {
   .modal-body {
@@ -11873,6 +11942,13 @@ h6,
   }
   .icon-card-body {
     font-size: 17px;
+  }
+  .window-7 {
+    margin-top: 100px;
+  }
+  .window-7-link {
+    width: 275px;
+    font-size: 26px;
   }
 }
 @media (min-width: 768px) {
@@ -12039,6 +12115,9 @@ h6,
     margin-top: 30px;
     font-size: 22px;
   }
+  .window-7 {
+    margin-top: 100px;
+  }
 }
 @media (min-width: 992px) {
   .navbar-brand {
@@ -12165,6 +12244,10 @@ h6,
   }
   .icon-card-body-header {
     font-size: 30px;
+  }
+  .window-7 {
+    background-image: url("../images/Main/mainBackground/historyTourBig.jpg");
+    background-position: top;
   }
 }
 @media (min-width: 1200px) {
