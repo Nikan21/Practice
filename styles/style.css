@@ -10767,7 +10767,7 @@ textarea.form-control-lg {
 }
 
 body {
-  height: 4459px;
+  height: 8459px;
 }
 
 h1, .h1,
@@ -10945,7 +10945,9 @@ h6,
 
 #all-games,
 #news,
-#photo {
+#photo,
+#discussion,
+#help {
   margin-top: -55px;
   padding-top: 55px;
 }
