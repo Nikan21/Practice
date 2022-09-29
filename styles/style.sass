@@ -178,7 +178,8 @@ h6
 #news,
 #photo,
 #discussion,
-#help
+#help,
+#more-than-games
     margin-top: -55px
     padding-top: 55px
 
@@ -509,6 +510,7 @@ h6
 
 //Window 6
 .window-6
+    height: 800px
     margin-top: 200px
 
 .icons-wrapper
@@ -558,7 +560,7 @@ h6
     align-items: center
     min-width: 250px
     height: 540px
-    margin: 20px 15px
+    margin: 20px 0
     margin-top: 80px
     background-image: url('../images/Main/mainBackgroundStories/stories.jpeg')
     background-position: center
@@ -567,9 +569,9 @@ h6
 .window-7-header
     margin-top: 5px
     margin-bottom: 0
-    font-size: 28px
+    font-size: 26px
     font-weight: 900
-    color: white
+    color: black
 
 .window-7-link
     width: 230px
@@ -993,17 +995,16 @@ h6
         align-items: center
         min-width: 250px
         height: 540px
-        margin: 20px 15px
+        margin: 20px 0
         margin-top: 60px
         background-image: url('../images/Main/mainBackgroundStories/stories.jpeg')
         background-position: center
 
     .window-7-header
-        margin-top: 10px
         margin-bottom: 0
-        font-size: 24px
+        font-size: 20px
         font-weight: 900
-        color: white
+        color: black
 
     .window-7-link
         width: 230px
@@ -1114,6 +1115,7 @@ h6
 
     //Window 6
     .window-6
+        height: 990px
         margin-top: 50px
 
     .icons-wrapper
@@ -1289,6 +1291,7 @@ h6
 
     //Window 6
     .window-6
+        height: 1250px
         margin: 0
 
     .icons-wrapper
@@ -1311,6 +1314,10 @@ h6
     //Window 7
     .window-7
         margin-top: 100px
+
+    .window-7-header
+        font-size: 28px
+        color: red
 
 @include media-breakpoint-up(lg)
     //Header
@@ -1440,6 +1447,9 @@ h6
         font-size: 30px
 
     //Window 6
+    .window-6
+        height: 1480px
+
     .icons-wrapper
         height: 1480px
 
@@ -1451,8 +1461,11 @@ h6
 
     //Window 7
     .window-7
-        background-image: url('../images/Main/mainBackground/historyTourBig.jpg')
+        background-image: url('../images/Main/mainBackgroundStories/storiesBig.jpg')
         background-position: top
+
+    .window-7-header
+        font-size: 38px
 
 @include media-breakpoint-up(xl)
     //Main
@@ -1572,6 +1585,7 @@ h6
 
     //Window 6
     .window-6
+        height: 355px
         margin-top: 70px
 
     .icons-wrapper
@@ -1593,6 +1607,10 @@ h6
         width: 200px
         margin-top: 20px
         font-size: 18px
+
+    //Window 7
+    .window-7-header
+        font-size: 45px
 
 @include media-breakpoint-up(xxl)
     //Main
@@ -1749,3 +1767,11 @@ h6
     .icon-card-link
         width: 250px
         font-size: 23px
+
+    //Window 7
+    .window-7-header
+        font-size: 50px
+
+    .window-7-link
+        width: 325px
+        font-size: 30px
