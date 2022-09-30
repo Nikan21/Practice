@@ -11108,6 +11108,7 @@ h6,
   background-image: url("../images/Main/mainBackground/historyTour.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  transition: background-image 1s;
 }
 
 .window-3-header {
@@ -11411,6 +11412,7 @@ h6,
   background-image: url("../images/Main/mainBackgroundStories/stories.jpeg");
   background-position: center;
   background-repeat: no-repeat;
+  transition: background-image 1s;
 }
 
 .window-7-header {
