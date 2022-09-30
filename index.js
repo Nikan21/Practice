@@ -589,3 +589,31 @@ function clickOnButton(event) {
     );
   }
 }
+
+//Dynamic change background image in window 3
+window.addEventListener("resize", changeBackgroundWindow3);
+const window3 = document.querySelector(".window-3")
+
+function changeBackgroundWindow3(event) {
+  if (widthWindow <= 992) {
+  window3.style.backgroundImage =
+        "url('../images/Main/mainBackground/historyTour.jpg')";
+  }else{
+    window3.style.backgroundImage =
+        "url('../images/Main/mainBackground/historyTourBig.jpg')";
+  }
+}
+
+//Dynamic change background image in window 7
+window.addEventListener("resize", changeBackgroundWindow7);
+const window7 = document.querySelector(".window-7")
+
+function changeBackgroundWindow7(event) {
+  if (widthWindow <= 992) {
+    window7.style.backgroundImage =
+        "url('../images/Main/mainBackgroundStories/stories.jpeg')";
+  }else{
+    window7.style.backgroundImage =
+        "url('../images/Main/mainBackgroundStories/storiesBig.jpg')";
+  }
+}
