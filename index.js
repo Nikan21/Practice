@@ -592,28 +592,51 @@ function clickOnButton(event) {
 
 //Dynamic change background image in window 3
 window.addEventListener("resize", changeBackgroundWindow3);
-const window3 = document.querySelector(".window-3")
+const window3 = document.querySelector(".window-3");
 
 function changeBackgroundWindow3(event) {
   if (widthWindow <= 992) {
-  window3.style.backgroundImage =
-        "url('../images/Main/mainBackground/historyTour.jpg')";
-  }else{
     window3.style.backgroundImage =
-        "url('../images/Main/mainBackground/historyTourBig.jpg')";
+      "url('../images/Main/mainBackground/historyTour.jpg')";
+  } else {
+    window3.style.backgroundImage =
+      "url('../images/Main/mainBackground/historyTourBig.jpg')";
   }
 }
 
 //Dynamic change background image in window 7
 window.addEventListener("resize", changeBackgroundWindow7);
-const window7 = document.querySelector(".window-7")
+const window7 = document.querySelector(".window-7");
 
 function changeBackgroundWindow7(event) {
   if (widthWindow <= 992) {
     window7.style.backgroundImage =
-        "url('../images/Main/mainBackgroundStories/stories.jpeg')";
-  }else{
+      "url('../images/Main/mainBackgroundStories/stories.jpeg')";
+  } else {
     window7.style.backgroundImage =
-        "url('../images/Main/mainBackgroundStories/storiesBig.jpg')";
+      "url('../images/Main/mainBackgroundStories/storiesBig.jpg')";
+  }
+}
+
+//Change window 8 position elements
+const window8LinksAndRatingWrapper = document.querySelector(
+  ".window-8-links-and-rating-wrapper"
+);
+const window8TextAndRatingWrapper = document.querySelector(
+  ".window-8-text-and-rating-wrapper"
+);
+const window8FooterText = document.querySelector(".window-8-footer-text");
+
+if (widthWindow >= 1200) {
+  window8LinksAndRatingWrapper.append(window8TextAndRatingWrapper);
+}
+
+window.addEventListener("resize", changePositionElementsWindow8);
+
+function changePositionElementsWindow8(event) {
+  if (widthWindow < 1200) {
+    window8FooterText.after(window8TextAndRatingWrapper);
+  } else {
+    window8LinksAndRatingWrapper.append(window8TextAndRatingWrapper);
   }
 }
