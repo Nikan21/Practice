@@ -11482,6 +11482,10 @@ h6,
   border: 2px solid #656565;
 }
 
+.window-8-links-animation {
+  transition: margin-top 0.5s, opacity 0.5s;
+}
+
 .window-8-footer-text {
   margin-top: 20px;
   font-size: 12px;
@@ -12675,6 +12679,9 @@ h6,
   }
   .window-8-second-text {
     font-size: 25px;
+  }
+  .window-8-links-icon {
+    margin-bottom: 0;
   }
   .window-8-footer-text {
     font-size: 19px;

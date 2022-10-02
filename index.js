@@ -640,3 +640,21 @@ function changePositionElementsWindow8(event) {
     window8LinksAndRatingWrapper.append(window8TextAndRatingWrapper);
   }
 }
+
+const window8LinksWrapper = document.querySelector(".window-8-links-wrapper");
+
+window8LinksWrapper.addEventListener("pointerover", hoverOverLinksWindow8);
+
+function hoverOverLinksWindow8(event) {
+  let target = event.target;
+  if (!target.closest(".window-8-links-animation")) return;
+  target.style.marginTop = -10 + "px";
+  target.style.opacity = "0.5";
+
+  target.addEventListener("pointerout", hoverOutLinksWindow8);
+
+  function hoverOutLinksWindow8(event) {
+    target.style.marginTop = 0;
+    target.style.opacity = "1";
+  }
+}
