@@ -641,6 +641,7 @@ function changePositionElementsWindow8(event) {
   }
 }
 
+//Animation links in window 8
 const window8LinksWrapper = document.querySelector(".window-8-links-wrapper");
 
 window8LinksWrapper.addEventListener("pointerover", hoverOverLinksWindow8);
@@ -656,5 +657,41 @@ function hoverOverLinksWindow8(event) {
   function hoverOutLinksWindow8(event) {
     target.style.marginTop = 0;
     target.style.opacity = "1";
+  }
+}
+
+//Change footer position elements
+const footer = document.querySelector(".footer");
+const footerOpenLanguageButton = document.querySelector(
+  ".footer-open-language-button"
+);
+const footerCompanyWrapperLinks = document.querySelector(
+  ".footer-company-wrapper-links"
+);
+const footerLogoWrapper = document.querySelector(".footer-logo-wrapper");
+const footerCompanyWrapperRules = document.querySelector(
+  ".footer-company-wrapper-rules"
+);
+
+if (widthWindow >= 1200) {
+  footer.append(footerLogoWrapper);
+  footerLogoWrapper.after(footerCompanyWrapperLinks);
+  footerCompanyWrapperLinks.after(footerCompanyWrapperRules);
+  footerCompanyWrapperRules.after(footerOpenLanguageButton);
+}
+
+window.addEventListener("resize", changePositionElementsFooter);
+
+function changePositionElementsFooter(event) {
+  if (widthWindow < 1200) {
+    footer.append(footerOpenLanguageButton);
+    footerOpenLanguageButton.after(footerCompanyWrapperLinks);
+    footerCompanyWrapperLinks.after(footerLogoWrapper);
+    footerLogoWrapper.after(footerCompanyWrapperRules);
+  } else {
+    footer.append(footerLogoWrapper);
+    footerLogoWrapper.after(footerCompanyWrapperLinks);
+    footerCompanyWrapperLinks.after(footerCompanyWrapperRules);
+    footerCompanyWrapperRules.after(footerOpenLanguageButton);
   }
 }
