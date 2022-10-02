@@ -11580,6 +11580,14 @@ h6,
   color: white;
 }
 
+.offcanvas-language-active {
+  color: #527e6e;
+}
+
+.offcanvas-language:hover {
+  color: #527e6e;
+}
+
 .footer-company-wrapper-links {
   display: flex;
   flex-direction: column;
@@ -11592,6 +11600,11 @@ h6,
   font-size: 18px;
   font-weight: 900;
   text-decoration: none;
+  color: white;
+}
+
+.footer-company-link:hover {
+  text-decoration: underline;
   color: white;
 }
 
@@ -11626,6 +11639,11 @@ h6,
   font-size: 18px;
   font-weight: 900;
   text-decoration: none;
+  color: white;
+}
+
+.footer-company-rule:hover {
+  text-decoration: underline;
   color: white;
 }
 
@@ -12159,6 +12177,9 @@ h6,
     margin: 0;
     font-size: 14px;
     color: white;
+  }
+  .offcanvas-language-active {
+    color: #527e6e;
   }
   .footer-company-wrapper-links {
     display: flex;
