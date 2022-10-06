@@ -28,9 +28,6 @@ $modal-backdrop-opacity: 1
     font-weight: $fontWeight
 
 //Common rules
-body
-    height: 8459px
-
 h1,
 h3,
 h6
@@ -609,7 +606,7 @@ h6
     font-weight: 900
 
 .window-8-first-text
-    margin-top: 10px
+    margin-top: 25px
     font-size: 18px
 
 .window-8-links-and-rating-wrapper
@@ -675,6 +672,10 @@ h6
     margin-top: 20px
     font-size: 20px
     font-weight: 900
+    color: white
+
+.footer-open-language-button:hover
+    border: 1px solid #212529
     color: white
 
 .footer-open-language-button::after
@@ -1216,7 +1217,7 @@ h6
         font-weight: 900
 
     .window-8-first-text
-        margin-top: 10px
+        margin-top: 20px
         font-size: 18px
 
     .window-8-links-and-rating-wrapper
@@ -1278,6 +1279,10 @@ h6
         margin-top: 20px
         font-size: 20px
         font-weight: 900
+        color: white
+
+    .footer-open-language-button:hover
+        border: 1px solid #212529
         color: white
 
     .footer-open-language-button::after
@@ -1548,6 +1553,7 @@ h6
         font-size: 45px
 
     .window-8-first-text
+        margin-top: 30px
         font-size: 22px
 
     .window-8-second-text
@@ -1794,6 +1800,7 @@ h6
         font-size: 60px
 
     .window-8-first-text
+        margin-top: 35px
         font-size: 23px
 
     .window-8-second-text
@@ -1983,11 +1990,21 @@ h6
         font-size: 34px
 
     //Window 8
+    .window-8
+        margin-top: 75px
+
     .window-8-header
         font-size: 64px
 
+    .window-8-first-text
+        margin-top: 45px
+
     .window-8-links-wrapper
         width: 600px
+
+    //Footer
+    .footer
+        margin-top: 75px
 
 @include media-breakpoint-up(xl)
     //Main
@@ -2131,7 +2148,7 @@ h6
 
     //Window 8
     .window-8
-        margin-top: 150px
+        margin-top: 75px
 
     .window-8-header
         font-size: 80px
@@ -2162,10 +2179,13 @@ h6
     .footer
         flex-direction: row
         justify-content: space-around
-        margin-top: 150px
+        margin-top: 75px
+
+    .window-8-footer-text
+        margin-top: 75px
 
     .footer-open-language-button
-        font-size: 25px
+        font-size: 23px
 
     //Footer offcanvas
     .footer-offcanvas-header-text
@@ -2182,7 +2202,7 @@ h6
         font-size: 23px
 
     .footer-logo-name
-        font-size: 25px
+        font-size: 23px
 
     .footer-company-rule
         font-size: 23px
@@ -2362,7 +2382,7 @@ h6
 
     //Window 8
     .window-8
-        margin-top: 175px
+        margin-top: 100px
 
     .window-8-header
         font-size: 87px
@@ -2374,6 +2394,7 @@ h6
         font-size: 30px
 
     .window-8-footer-text
+        margin-top: 100px
         font-size: 24px
 
     .window-8-rating-text
@@ -2381,24 +2402,4 @@ h6
 
     //Footer
     .footer
-        margin-top: 175px
-
-    .footer-open-language-button
-        font-size: 30px
-
-    //Footer offcanvas
-    .footer-offcanvas-header-text
-        font-size: 22px
-
-    .offcanvas-language
-        font-size: 18px
-
-    //Continue footer
-    .footer-company-link
-        font-size: 28px
-
-    .footer-logo-name
-        font-size: 30px
-
-    .footer-company-rule
-        font-size: 28px
+        margin-top: 75px
