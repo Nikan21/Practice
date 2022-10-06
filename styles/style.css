@@ -10758,14 +10758,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-.header-drop-menu, .brand-name, .modal-body, .registration-brand-name, .row {
-  margin: 0;
-}
-
-.header, .modal-content {
-  padding: 0;
-}
-
 h1, .h1,
 h3,
 .h3,
@@ -10776,6 +10768,10 @@ h6,
 
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
   padding: 0;
+}
+
+.row {
+  margin: 0;
 }
 
 .col-2,
@@ -10806,6 +10802,7 @@ h6,
 .modal-content {
   min-width: 250px;
   max-width: 450px;
+  padding: 0;
 }
 
 .modal-header {
@@ -10818,12 +10815,14 @@ h6,
 }
 
 .registration-brand-name {
+  margin: 0;
   font-size: 30px;
   font-weight: 900;
 }
 
 .modal-body {
   height: 400px;
+  margin: 0;
   border: 1px solid grey;
 }
 
@@ -10891,6 +10890,7 @@ h6,
   right: 0;
   height: 50px;
   z-index: 2;
+  padding: 0;
 }
 
 .header-wrapper {
@@ -10919,6 +10919,7 @@ h6,
 
 .brand-name {
   display: inline-block;
+  margin: 0;
   font-weight: 900;
 }
 
@@ -10932,6 +10933,7 @@ h6,
 
 .header-drop-menu {
   width: 100%;
+  margin: 0;
   background-color: #212529;
 }
 
@@ -10990,6 +10992,7 @@ h6,
 }
 
 .window-2 {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -11005,8 +11008,8 @@ h6,
   top: 175px;
   padding: 3px 8px;
   background: #ddd;
-  border-radius: 15px;
   border: 1px solid gray;
+  border-radius: 15px;
   font-size: 27px;
   line-height: 24px;
 }
@@ -11098,6 +11101,7 @@ h6,
 }
 
 .window-3 {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -11136,6 +11140,7 @@ h6,
 }
 
 .window-4 {
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -11402,6 +11407,7 @@ h6,
 }
 
 .window-7 {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
@@ -11795,6 +11801,7 @@ h6,
     background-color: white;
   }
   .window-3 {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -11804,6 +11811,7 @@ h6,
     margin-top: 60px;
     background-image: url("../images/Main/mainBackground/historyTour.jpg");
     background-position: center;
+    background-repeat: no-repeat;
   }
   .window-3-header {
     margin-top: 10px;
@@ -12041,6 +12049,7 @@ h6,
     background-color: white;
   }
   .window-7 {
+    display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -12050,6 +12059,7 @@ h6,
     margin-top: 120px;
     background-image: url("../images/Main/mainBackgroundStories/stories.jpeg");
     background-position: center;
+    background-repeat: no-repeat;
   }
   .window-7-header {
     margin-bottom: 0;
@@ -12120,8 +12130,6 @@ h6,
   .window-8-rating {
     width: 75px;
     height: 80px;
-    margin: 0 auto;
-    padding: 0;
   }
   .footer {
     display: flex;
@@ -12716,6 +12724,7 @@ h6,
   .window-3 {
     background-image: url("../images/Main/mainBackground/historyTourBig.jpg");
     background-position: top;
+    background-repeat: no-repeat;
   }
   .window-3-header {
     margin-top: 0;
@@ -12786,6 +12795,7 @@ h6,
   }
   .icons-wrapper {
     height: 500px;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: start;
@@ -12803,6 +12813,7 @@ h6,
     margin-top: 125px;
     background-image: url("../images/Main/mainBackgroundStories/storiesBig.jpg");
     background-position: top;
+    background-repeat: no-repeat;
   }
   .window-7-header {
     font-size: 34px;

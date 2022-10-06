@@ -4,13 +4,7 @@ $modal-backdrop-opacity: 1
 
 @import '../node_modules/bootstrap/scss/bootstrap.scss'
 
-//Extends and Mixins
-%reset-margin
-    margin: 0
-
-%reset-padding
-    padding: 0
-
+//Mixins
 @mixin marginAndPadding($margin: 0, $padding: 0)
     margin: $margin
     padding: $padding
@@ -19,13 +13,28 @@ $modal-backdrop-opacity: 1
     width: $width
     height: $height
 
-@mixin minAndMaxWidth($minWidth: 0px, $maxWidth: 0px)
-    min-width: $minWidth
-    max-width: $maxWidth
-
 @mixin fontSizeAndWeight($fontSize: 0px, $fontWeight: 0)
     font-size: $fontSize
     font-weight: $fontWeight
+
+@mixin topAndLeft($top: 0px, $left: 0px)
+    top: $top
+    left: $left
+
+@mixin flex($flex-direction: row, $justify-content, $align-items)
+    display: flex
+    flex-direction: $flex-direction
+    justify-content: $justify-content
+    align-items: $align-items
+
+@mixin background($background-image, $background-position, $background-repeat: no-repeat)
+    background-image: $background-image
+    background-position: $background-position
+    background-repeat: $background-repeat
+
+@mixin marginTopAndBottom($margin-top: 0, $margin-bottom: 0)
+    margin-top: $margin-top
+    margin-bottom: $margin-bottom
 
 //Common rules
 h1,
@@ -37,7 +46,7 @@ h6
     padding: 0
 
 .row
-    @extend %reset-margin
+    margin: 0
 
 .col-2,
 .col-3,
@@ -61,8 +70,9 @@ h6
 
 //Modal Window
 .modal-content
-    @include minAndMaxWidth($minWidth: 250px, $maxWidth: 450px)
-    @extend %reset-padding
+    min-width: 250px
+    max-width: 450px
+    padding: 0
 
 .modal-header
     height: 120px
@@ -71,12 +81,12 @@ h6
     @include widthAndHeight($width: 60px, $height: 60px)
 
 .registration-brand-name
-    @extend %reset-margin
+    margin: 0
     @include fontSizeAndWeight($fontSize: 30px, $fontWeight: 900)
 
 .modal-body
     height: 400px
-    @extend %reset-margin
+    margin: 0
     border: 1px solid grey
 
 .modal-first-text
@@ -91,8 +101,7 @@ h6
 .email-icon,
 .password-icon
     position: absolute
-    top: 21px
-    left: 10px
+    @include topAndLeft($top: 21px, $left: 10px)
 
 .check-registration-wrapper
     padding-left: 10px
@@ -131,7 +140,7 @@ h6
     right: 0
     height: 50px
     z-index: 2
-    @extend %reset-padding
+    padding: 0
 
 .header-wrapper
     height: 40px
@@ -152,7 +161,7 @@ h6
 
 .brand-name
     display: inline-block
-    @extend %reset-margin
+    margin: 0
     font-weight: 900
 
 .header-toggler-cross
@@ -164,7 +173,7 @@ h6
 
 .header-drop-menu
     width: 100%
-    @extend %reset-margin
+    margin: 0
     background-color: #212529
 
 .header-menu
@@ -215,9 +224,7 @@ h6
 
 //Window 2      
 .window-2
-    flex-direction: column
-    justify-content: center
-    align-items: center
+    @include flex($flex-direction: column, $justify-content: center, $align-items: center)
     margin-top: 125px
 
 .window-2-header
@@ -229,8 +236,8 @@ h6
     top: 175px
     padding: 3px 8px
     background: #ddd
-    border-radius: 15px
     border: 1px solid gray
+    border-radius: 15px
     font-size: 27px
     line-height: 24px
 
@@ -264,16 +271,14 @@ h6
 .first-carousel-card
     display: flex
     align-items: center
-    width: 300px
-    height: 450px
+    @include widthAndHeight($width: 300px, $height: 450px)
     border: 0
 
 .first-carousel-card-header
     border: 0
 
 .first-carousel-image
-    width: 300px
-    height: 350px
+    @include widthAndHeight($width: 300px, $height: 350px)
 
 .first-carousel-card-body
     border: 0
@@ -283,19 +288,16 @@ h6
     font-size: 21px
 
 .first-carousel-footer-icons
-    width: 25px
-    height: 25px
+    @include widthAndHeight($width: 25px, $height: 25px)
 
 .first-carousel-footer-icons-double
-    width: 30px
-    height: 30px
+    @include widthAndHeight($width: 30px, $height: 30px)
 
 .window-2-link
     width: 230px
     margin-top: 15px
     border-radius: 25px
-    font-size: 21px
-    font-weight: 900
+    @include fontSizeAndWeight($fontSize: 21px, $fontWeight: 900)
     color: white
     background-color: #527e6e
 
@@ -306,31 +308,24 @@ h6
 
 //Window 3
 .window-3
-    flex-direction: column
-    justify-content: space-between
-    align-items: center
+    @include flex($flex-direction: column, $justify-content: space-between, $align-items: center)
     min-width: 250px
     height: 540px
     margin: 20px 0
     margin-top: 80px
-    background-image: url('../images/Main/mainBackground/historyTour.jpg')
-    background-position: center
-    background-repeat: no-repeat
+    @include background($background-image: url('../images/Main/mainBackground/historyTour.jpg'), $background-position: center)
     transition: background-image 1s
 
 .window-3-header
-    margin-top: 5px
-    margin-bottom: 0
-    font-size: 23px
-    font-weight: 900
+    @include marginTopAndBottom($margin-top: 5px)
+    @include fontSizeAndWeight($fontSize: 23px, $fontWeight: 900)
     color: white
 
 .window-3-link
     width: 230px
     margin-bottom: 5px
     border-radius: 25px
-    font-size: 21px
-    font-weight: 900
+    @include fontSizeAndWeight($fontSize: 21px, $fontWeight: 900)
     color: white
     background-color: #ab211a
 
@@ -341,9 +336,7 @@ h6
 
 //Window 4  
 .window-4
-    flex-direction: column
-    justify-content: center
-    align-items: center
+    @include flex($flex-direction: column, $justify-content: center, $align-items: center)
     margin-top: 80px
 
 .window-4-header
@@ -374,10 +367,8 @@ h6
 
 .second-carousel-current-page
     position: absolute
-    top: 565px
-    left: 116px
-    font-size: 23px
-    font-weight: 500
+    @include topAndLeft($top: 565px, $left: 116px)
+    @include fontSizeAndWeight($fontSize: 23px, $fontWeight: 500)
 
 .second-carousel-wrapper
     position: relative
@@ -397,8 +388,7 @@ h6
 .second-carousel-card
     display: flex
     align-items: center
-    width: 300px
-    height: 600px
+    @include widthAndHeight($width: 300px, $height: 600px)
     border: 0
 
 .second-carousel-card > div
@@ -409,8 +399,7 @@ h6
     padding: 0
 
 .second-carousel-image
-    width: 290px
-    height: 150px
+    @include widthAndHeight($width: 290px, $height: 150px)
 
 .second-carousel-card-body
     border: 0
@@ -448,8 +437,7 @@ h6
     width: 230px
     margin-top: 15px
     border-radius: 25px
-    font-size: 21px
-    font-weight: 900
+    @include fontSizeAndWeight($fontSize: 21px, $fontWeight: 900)
     color: white
     background-color: #527e6e
 
@@ -466,8 +454,7 @@ h6
     font-size: 23px
 
 .window-5-text
-    margin-top: 20px
-    margin-bottom: 0
+    @include marginTopAndBottom($margin-top: 20px)
     font-size: 19px
 
 .photo-wrapper
@@ -496,15 +483,13 @@ h6
 
 .photo-card-body-header
     margin-top: 20px
-    font-size: 21px
-    font-weight: 900
+    @include fontSizeAndWeight($fontSize: 21px, $fontWeight: 900)
 
 .photo-card-link
     width: 230px
     margin-top: 10px
     border-radius: 25px
-    font-size: 21px
-    font-weight: 500
+    @include fontSizeAndWeight($fontSize: 21px, $fontWeight: 500)
     color: white
     background-color: #527e6e
 
@@ -519,10 +504,7 @@ h6
     margin-top: 200px
 
 .icons-wrapper
-    display: flex
-    flex-direction: column
-    justify-content: space-between
-    align-items: center
+    @include flex($flex-direction: column, $justify-content: space-between, $align-items: center)
     height: 880px
     padding: 0
     border: 0
@@ -542,8 +524,7 @@ h6
     border: 0
 
 .icon-card-body-header
-    font-size: 21px
-    font-weight: 900
+    @include fontSizeAndWeight($fontSize: 21px, $fontWeight: 900)
 
 .icon-card-body-text
     font-size: 19px
@@ -552,8 +533,7 @@ h6
     width: 230px
     margin-top: 10px
     border-radius: 25px
-    font-size: 21px
-    font-weight: 500
+    @include fontSizeAndWeight($fontSize: 21px, $fontWeight: 500)
     color: white
     background-color: #527e6e
 
@@ -564,31 +544,24 @@ h6
 
 //Window 7
 .window-7
-    flex-direction: column
-    justify-content: space-between
-    align-items: center
+    @include flex($flex-direction: column, $justify-content: space-between, $align-items: center)
     min-width: 250px
     height: 540px
     margin: 20px 0
     margin-top: 160px
-    background-image: url('../images/Main/mainBackgroundStories/stories.jpeg')
-    background-position: center
-    background-repeat: no-repeat
+    @include background($background-image: url('../images/Main/mainBackgroundStories/stories.jpeg'), $background-position: center)
     transition: background-image 1s
 
 .window-7-header
-    margin-top: 5px
-    margin-bottom: 0
-    font-size: 23px
-    font-weight: 900
+    @include marginTopAndBottom($margin-top: 5px)
+    @include fontSizeAndWeight($fontSize: 23px, $fontWeight: 900)
     color: black
 
 .window-7-link
     width: 230px
     margin-bottom: 5px
     border-radius: 25px
-    font-size: 21px
-    font-weight: 900
+    @include fontSizeAndWeight($fontSize: 21px, $fontWeight: 900)
     color: white
     background-color: #ab211a
 
@@ -602,8 +575,7 @@ h6
     margin-top: 80px
 
 .window-8-header
-    font-size: 38px
-    font-weight: 900
+    @include fontSizeAndWeight($fontSize: 38px, $fontWeight: 900)
 
 .window-8-first-text
     margin-top: 25px
@@ -628,8 +600,7 @@ h6
     padding: 0px 38px
 
 .window-8-links-icon
-    width: 86px
-    height: 86px
+    @include widthAndHeight($width: 86px, $height: 86px)
     margin-bottom: 30px
     border: 2px solid #656565
 
@@ -649,10 +620,8 @@ h6
     font-size: 18px
 
 .window-8-rating
-    width: 75px
-    height: 80px
-    margin: 0 auto
-    padding: 0
+    @include widthAndHeight($width: 75px, $height: 80px)
+    @include marginAndPadding($margin: 0 auto, $padding: 0)
 
 //Footer
 .footer
@@ -670,8 +639,7 @@ h6
     justify-content: center
     align-items: start
     margin-top: 20px
-    font-size: 20px
-    font-weight: 900
+    @include fontSizeAndWeight($fontSize: 20px, $fontWeight: 900)
     color: white
 
 .footer-open-language-button:hover
@@ -731,8 +699,7 @@ h6
 
 .footer-company-link
     padding: 10px 0
-    font-size: 18px
-    font-weight: 900
+    @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 900)
     text-decoration: none
     color: white
 
@@ -747,13 +714,11 @@ h6
     text-decoration: none
 
 .footer-ubisoft-logo
-    width: 30px
-    height: 30px
+    @include widthAndHeight($width: 30px, $height: 30px)
     margin-right: 5px
 
 .footer-logo-name
-    font-size: 20px
-    font-weight: 900
+    @include fontSizeAndWeight($fontSize: 20px, $fontWeight: 900)
     color: white
 
 .footer-company-wrapper-rules
@@ -764,8 +729,7 @@ h6
 
 .footer-company-rule
     padding: 10px 0
-    font-size: 18px
-    font-weight: 900
+    @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 900)
     text-decoration: none
     color: white
 
@@ -788,8 +752,7 @@ h6
         display: flex
 
     #saveData
-        width: 13px
-        height: 13px
+        @include widthAndHeight($width: 13px, $height: 13px)
 
     .remember-label
         padding-left: 10px
@@ -885,16 +848,14 @@ h6
     .first-carousel-card
         display: flex
         align-items: center
-        width: 250px
-        height: 450px
+        @include widthAndHeight($width: 250px, $height: 450px)
         border: 0
 
     .first-carousel-card-header
         border: 0
 
     .first-carousel-image
-        width: 250px
-        height: 350px
+        @include widthAndHeight($width: 250px, $height: 350px)
 
     .first-carousel-card-body
         border: 0
@@ -904,19 +865,16 @@ h6
         font-size: 18px
 
     .first-carousel-footer-icons
-        width: 20px
-        height: 20px
+        @include widthAndHeight($width: 20px, $height: 20px)
 
     .first-carousel-footer-icons-double
-        width: 24px
-        height: 24px
+        @include widthAndHeight($width: 24px, $height: 24px)
 
     .window-2-link
         width: 200px
         margin-top: 0
         border-radius: 25px
-        font-size: 18px
-        font-weight: 900
+        @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 900)
         color: white
         background-color: #527e6e
 
@@ -927,29 +885,23 @@ h6
 
     //Window 3
     .window-3
-        flex-direction: column
-        justify-content: space-between
-        align-items: center
+        @include flex($flex-direction: column, $justify-content: space-between, $align-items: center)
         min-width: 250px
         height: 540px
         margin: 20px 0
         margin-top: 60px
-        background-image: url('../images/Main/mainBackground/historyTour.jpg')
-        background-position: center
+        @include background($background-image: url('../images/Main/mainBackground/historyTour.jpg'), $background-position: center)
 
     .window-3-header
-        margin-top: 10px
-        margin-bottom: 0
-        font-size: 20px
-        font-weight: 900
+        @include marginTopAndBottom($margin-top: 10px)
+        @include fontSizeAndWeight($fontSize: 20px, $fontWeight: 900)
         color: white
 
     .window-3-link
         width: 200px
         margin-bottom: 5px
         border-radius: 25px
-        font-size: 18px
-        font-weight: 900
+        @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 900)
         color: white
         background-color: #ab211a
 
@@ -991,10 +943,8 @@ h6
 
     .second-carousel-current-page
         position: absolute
-        top: 544px
-        left: 97px
-        font-size: 18px
-        font-weight: 500
+        @include topAndLeft($top: 544px, $left: 97px)
+        @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 500)
 
     .second-carousel-wrapper
         position: relative
@@ -1014,8 +964,7 @@ h6
     .second-carousel-card
         display: flex
         align-items: center
-        width: 250px
-        height: 580px
+        @include widthAndHeight($width: 250px, $height: 580px)
         margin-top: 0
         border: 0
 
@@ -1065,8 +1014,7 @@ h6
     .window-4-link
         width: 200px
         border-radius: 25px
-        font-size: 18px
-        font-weight: 900
+        @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 900)
         color: white
         background-color: #527e6e
 
@@ -1083,8 +1031,7 @@ h6
         font-size: 20px
 
     .window-5-text
-        margin-top: 15px
-        margin-bottom: 0
+        @include marginTopAndBottom($margin-top: 15px)
         font-size: 16px
 
     .photo-wrapper
@@ -1113,15 +1060,13 @@ h6
 
     .photo-card-body-header
         margin-top: 20px
-        font-size: 18px
-        font-weight: 900
+        @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 900)
 
     .photo-card-link
         width: 200px
         margin-top: 10px
         border-radius: 25px
-        font-size: 18px
-        font-weight: 500
+        @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 500)
         color: white
         background-color: #527e6e
 
@@ -1136,10 +1081,7 @@ h6
         margin-top: 0
 
     .icons-wrapper
-        display: flex
-        flex-direction: column
-        justify-content: space-between
-        align-items: center
+        @include flex($flex-direction: column, $justify-content: space-between, $align-items: center)
         height: 770px
         padding: 0
         border: 0
@@ -1159,15 +1101,13 @@ h6
         border: 0
 
     .icon-card-body-header
-        font-size: 18px
-        font-weight: 900
+        @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 900)
 
     .icon-card-link
         width: 200px
         margin-top: 10px
         border-radius: 25px
-        font-size: 18px
-        font-weight: 500
+        @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 500)
         color: white
         background-color: #527e6e
 
@@ -1178,28 +1118,23 @@ h6
 
     //Window 7
     .window-7
-        flex-direction: column
-        justify-content: space-between
-        align-items: center
+        @include flex($flex-direction: column, $justify-content: space-between, $align-items: center)
         min-width: 250px
         height: 540px
         margin: 20px 0
         margin-top: 120px
-        background-image: url('../images/Main/mainBackgroundStories/stories.jpeg')
-        background-position: center
+        @include background($background-image: url('../images/Main/mainBackgroundStories/stories.jpeg'), $background-position: center)
 
     .window-7-header
         margin-bottom: 0
-        font-size: 20px
-        font-weight: 900
+        @include fontSizeAndWeight($fontSize: 20px, $fontWeight: 900)
         color: black
 
     .window-7-link
         width: 200px
         margin-bottom: 5px
         border-radius: 25px
-        font-size: 18px
-        font-weight: 900
+        @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 900)
         color: white
         background-color: #ab211a
 
@@ -1213,8 +1148,7 @@ h6
         margin-top: 60px
 
     .window-8-header
-        font-size: 28px
-        font-weight: 900
+        @include fontSizeAndWeight($fontSize: 28px, $fontWeight: 900)
 
     .window-8-first-text
         margin-top: 20px
@@ -1238,8 +1172,7 @@ h6
         padding: 0px 38px
 
     .window-8-links-icon
-        width: 86px
-        height: 86px
+        @include widthAndHeight($width: 86px, $height: 86px)
         margin-bottom: 30px
         border: 2px solid #656565
 
@@ -1256,10 +1189,8 @@ h6
         font-size: 18px
 
     .window-8-rating
-        width: 75px
-        height: 80px
-        margin: 0 auto
-        padding: 0
+        @include widthAndHeight($width: 75px, $height: 80px)
+        @mixin marginAndPadding($margin: 0 auto, $padding: 0)
 
     //Footer
     .footer
@@ -1277,8 +1208,7 @@ h6
         justify-content: center
         align-items: start
         margin-top: 20px
-        font-size: 20px
-        font-weight: 900
+        @include fontSizeAndWeight($fontSize: 20px, $fontWeight: 900)
         color: white
 
     .footer-open-language-button:hover
@@ -1335,8 +1265,7 @@ h6
 
     .footer-company-link
         padding: 10px 0
-        font-size: 18px
-        font-weight: 900
+        @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 900)
         text-decoration: none
         color: white
 
@@ -1347,13 +1276,11 @@ h6
         text-decoration: none
 
     .footer-ubisoft-logo
-        width: 30px
-        height: 30px
+        @include widthAndHeight($width: 30px, $height: 30px)
         margin-right: 5px
 
     .footer-logo-name
-        font-size: 20px
-        font-weight: 900
+        @include fontSizeAndWeight($fontSize: 20px, $fontWeight: 900)
         color: white
 
     .footer-company-wrapper-rules
@@ -1364,8 +1291,7 @@ h6
 
     .footer-company-rule
         padding: 10px 0
-        font-size: 18px
-        font-weight: 900
+        @include fontSizeAndWeight($fontSize: 18px, $fontWeight: 900)
         text-decoration: none
         color: white
 
@@ -1455,16 +1381,14 @@ h6
         font-size: 30px
 
     .second-carousel-current-page
-        top: 670px
-        left: 242px
+        @include topAndLeft($top: 670px, $left: 242px)
         font-size: 25px
 
     .second-carousel-wrapper
         width: 550px
 
     .second-carousel-card
-        width: 265px
-        height: 700px
+        @include widthAndHeight($width: 265px, $height: 700px)
         margin: 0 5px
 
     .second-carousel-image
@@ -1561,8 +1485,7 @@ h6
 
     .window-8-links-wrapper
         width: 450px
-        margin: 10px auto
-        padding: 0
+        @include marginAndPadding($margin: 10px auto, $padding: 0)
 
     .window-8-footer-text
         font-size: 16px
@@ -1656,12 +1579,10 @@ h6
         font-size: 24px
 
     .first-carousel-footer-icons
-        width: 25px
-        height: 25px
+        @include widthAndHeight($width: 25px, $height: 25px)
 
     .first-carousel-footer-icons-double
-        width: 30px
-        height: 30px
+        @include widthAndHeight($width: 30px, $height: 30px)
 
     .window-2-link
         width: 250px
@@ -1698,8 +1619,7 @@ h6
         left: 15px
 
     .second-carousel-current-page
-        top: 567px
-        left: 330px
+        @include topAndLeft($top: 567px, $left: 330px)
         font-size: 34px
 
     .second-carousel-next
@@ -1709,8 +1629,7 @@ h6
         width: 740px
 
     .second-carousel-card
-        width: 350px
-        height: 580px
+        @include widthAndHeight($width: 350px, $height: 580px)
         margin: 0 10px
 
     .second-carousel-card-header
@@ -1891,8 +1810,7 @@ h6
 
     //Window 3
     .window-3
-        background-image: url('../images/Main/mainBackground/historyTourBig.jpg')
-        background-position: top
+        @include background($background-image: url('../images/Main/mainBackground/historyTourBig.jpg'), $background-position: top)
 
     .window-3-header
         margin-top: 0
@@ -1912,12 +1830,10 @@ h6
 
     .second-carousel-button-wrapper
         position: absolute
-        top: 670px
-        left: 370px
+        @include topAndLeft($top: 670px, $left: 370px)
 
     .second-carousel-button
-        width: 80px
-        height: 13px
+        @include widthAndHeight($width: 80px, $height: 13px)
         border: 1px solid #c1c1c1
         background-color: #c1c1c1
 
@@ -1929,8 +1845,7 @@ h6
         margin-top: 20px
 
     .second-carousel-card
-        width: 235px
-        height: 650px
+        @include widthAndHeight($width: 235px, $height: 650px)
         margin: 0 5px
 
     .second-carousel-image
@@ -1967,9 +1882,7 @@ h6
 
     .icons-wrapper
         height: 500px
-        flex-direction: row
-        justify-content: space-around
-        align-items: start
+        @include flex($flex-direction: row, $justify-content: space-around, $align-items: start)
 
     .icon-card-wrapper
         width: 390px
@@ -1983,8 +1896,7 @@ h6
     //Window 7
     .window-7
         margin-top: 125px
-        background-image: url('../images/Main/mainBackgroundStories/storiesBig.jpg')
-        background-position: top
+        @include background($background-image: url('../images/Main/mainBackgroundStories/storiesBig.jpg'), $background-position: top)
 
     .window-7-header
         font-size: 34px
@@ -2046,12 +1958,10 @@ h6
         font-size: 20px
 
     .first-carousel-footer-icons
-        width: 30px
-        height: 30px
+        @include widthAndHeight($width: 30px, $height: 30px)
 
     .first-carousel-footer-icons-double
-        width: 35px
-        height: 35px
+        @include widthAndHeight($width: 35px, $height: 35px)
 
     .window-2-link
         margin-top: 30px
@@ -2075,8 +1985,7 @@ h6
         top: 625px
 
     .second-carousel-button-wrapper
-        top: 630px
-        left: 465px
+        @include topAndLeft($top: 630px, $left: 465px)
 
     .second-carousel-wrapper
         width: 1180px
@@ -2094,12 +2003,10 @@ h6
         font-size: 22px
 
     .second-carousel-footer-icons
-        width: 30px
-        height: 30px
+        @include widthAndHeight($width: 30px, $height: 30px)
 
     .second-carousel-footer-icons-double
-        width: 35px
-        height: 35px
+        @include widthAndHeight($width: 35px, $height: 35px)
 
     .window-4-link
         margin-top: 30px
@@ -2245,25 +2152,21 @@ h6
         width: 1390px
 
     .first-carousel-card
-        width: 325px
-        height: 585px
+        @include widthAndHeight($width: 325px, $height: 585px)
         margin: 0 10px
 
     .first-carousel-image
-        width: 325px
-        height: 500px
+        @include widthAndHeight($width: 325px, $height: 500px)
 
     .first-carousel-card-body-text
         margin-top: 15px
         font-size: 23px
 
     .first-carousel-footer-icons
-        width: 30px
-        height: 30px
+        @include widthAndHeight($width: 30px, $height: 30px)
 
     .first-carousel-footer-icons-double
-        width: 35px
-        height: 35px
+        @include widthAndHeight($width: 35px, $height: 35px)
 
     .window-2-link
         width: 300px
@@ -2303,21 +2206,18 @@ h6
         right: 25px
 
     .second-carousel-button-wrapper
-        top: 650px
-        left: 575px
+        @include topAndLeft($top: 650px, $left: 575px)
 
     .second-carousel-wrapper
         width: 1390px
         margin-top: 25px
 
     .second-carousel-card
-        width: 325px
-        height: 650px
+        @include widthAndHeight($width: 325px, $height: 650px)
         margin: 0 10px
 
     .second-carousel-image
-        width: 325px
-        height: 200px
+        @include widthAndHeight($width: 325px, $height: 200px)
 
     .second-carousel-card-body-header-text
         margin-top: 15px
