@@ -45,28 +45,31 @@ function checkHeaderMenu(event) {
   let imageWidth = headerMenu.offsetWidth + "px";
   let imageHeight = headerMenu.offsetHeight - 50 + "px";
 
+  headerWrapperMenu.addEventListener("click", closeMenu);
+
   if (!headerToggler.classList.contains("collapsed")) {
-    if (widthWindow <= 390)
+    if (widthWindow <= 390) {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/noImage.jpg')";
-    else if (widthWindow > 390 && widthWindow <= 490)
+    } else if (widthWindow > 390 && widthWindow <= 490) {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/altair.jpg')";
-    else if (widthWindow > 490 && widthWindow <= 590)
+    } else if (widthWindow > 490 && widthWindow <= 590) {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/ezio.jpg')";
-    else if (widthWindow > 590 && widthWindow <= 690)
+    } else if (widthWindow > 590 && widthWindow <= 690) {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/jacob.jpg')";
-    else if (widthWindow > 690 && widthWindow <= 790)
+    } else if (widthWindow > 690 && widthWindow <= 790) {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/edward.jpg')";
-    else if (widthWindow > 790 && widthWindow <= 890)
+    } else if (widthWindow > 790 && widthWindow <= 890) {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/shay.png')";
-    else if (widthWindow > 890 && widthWindow <= 992)
+    } else {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/allAssassins.jpg')";
+    }
 
     headerMenu.style.backgroundSize = `${imageWidth} ${imageHeight}`;
     window.addEventListener("resize", changeBackgroundHeaderImage);
@@ -79,27 +82,28 @@ function checkHeaderMenu(event) {
     imageHeight = headerMenu.offsetHeight - 50 + "px";
     headerMenu.style.backgroundSize = `${imageWidth} ${imageHeight}`;
 
-    if (widthWindow <= 390)
+    if (widthWindow <= 390) {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/noImage.jpg')";
-    else if (widthWindow > 390 && widthWindow <= 490)
+    } else if (widthWindow > 390 && widthWindow <= 490) {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/altair.jpg')";
-    else if (widthWindow > 490 && widthWindow <= 590)
+    } else if (widthWindow > 490 && widthWindow <= 590) {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/ezio.jpg')";
-    else if (widthWindow > 590 && widthWindow <= 690)
+    } else if (widthWindow > 590 && widthWindow <= 690) {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/jacob.jpg')";
-    else if (widthWindow > 690 && widthWindow <= 790)
+    } else if (widthWindow > 690 && widthWindow <= 790) {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/edward.jpg')";
-    else if (widthWindow > 790 && widthWindow <= 890)
+    } else if (widthWindow > 790 && widthWindow <= 890) {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/shay.png')";
-    else if (widthWindow > 890 && widthWindow <= 992)
+    } else {
       headerMenu.style.backgroundImage =
         "url('./images/Header/headerBackground/allAssassins.jpg')";
+    }
   }
 }
 
@@ -135,16 +139,7 @@ function closeMenu(event) {
   headerWrapperMenuClass.hide();
   headerTogglerCross.style.display = "none";
   headerTogglerBurger.style.display = "block";
-}
-
-//Dynamic style for .modal-backdrop(height)
-headerButton.addEventListener("click", dynamicModalBack);
-
-function dynamicModalBack(event) {
-  const modalBackdrop = document.querySelector(".modal-backdrop");
-  const windowFullHeight = document.documentElement.scrollHeight;
-
-  modalBackdrop.style.height = windowFullHeight + "px";
+  headerWrapperMenu.removeEventListener("click", closeMenu);
 }
 
 //First carousel
@@ -425,6 +420,7 @@ function moveLeftSecondSlider() {
   secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
 
   let indexPrev;
+
   allSecondCarouselButton.forEach((item, index) => {
     if (item === currentActiveButton) {
       item.classList.remove("active-second-carousel-button");
@@ -435,7 +431,9 @@ function moveLeftSecondSlider() {
       }
     }
   });
+
   let prevActiveButton = allSecondCarouselButton[indexPrev];
+
   currentActiveButton = prevActiveButton;
   prevActiveButton.classList.add("active-second-carousel-button");
 }
@@ -457,9 +455,11 @@ function moveRightSecondSlider() {
   secondCarouselCurrentPage.textContent = `${secondCarouselFirstPage} iз ${secondCarouselLastPage}`;
 
   let indexNext;
+
   allSecondCarouselButton.forEach((item, index) => {
     if (item === currentActiveButton) {
       item.classList.remove("active-second-carousel-button");
+
       if (index === allSecondCarouselButton.length - 1) {
         indexNext = 0;
       } else {
@@ -467,7 +467,9 @@ function moveRightSecondSlider() {
       }
     }
   });
+
   let nextActiveButton = allSecondCarouselButton[indexNext];
+
   currentActiveButton = nextActiveButton;
   nextActiveButton.classList.add("active-second-carousel-button");
 }
@@ -561,6 +563,7 @@ secondCarouselButtonWrapper.addEventListener("click", clickOnButton);
 
 function clickOnButton(event) {
   let currentButton = event.target.classList;
+
   currentActiveButton = event.target;
 
   if (currentButton.contains("second-carousel-button-first")) {
@@ -591,8 +594,9 @@ function clickOnButton(event) {
 }
 
 //Dynamic change background image in window 3
-window.addEventListener("resize", changeBackgroundWindow3);
 const window3 = document.querySelector(".window-3");
+
+window.addEventListener("resize", changeBackgroundWindow3);
 
 function changeBackgroundWindow3(event) {
   if (widthWindow <= 992) {
@@ -605,8 +609,9 @@ function changeBackgroundWindow3(event) {
 }
 
 //Dynamic change background image in window 7
-window.addEventListener("resize", changeBackgroundWindow7);
 const window7 = document.querySelector(".window-7");
+
+window.addEventListener("resize", changeBackgroundWindow7);
 
 function changeBackgroundWindow7(event) {
   if (widthWindow <= 992) {
@@ -648,7 +653,9 @@ window8LinksWrapper.addEventListener("pointerover", hoverOverLinksWindow8);
 
 function hoverOverLinksWindow8(event) {
   let target = event.target;
+
   if (!target.closest(".window-8-links-animation")) return;
+
   target.style.marginTop = -10 + "px";
   target.style.opacity = "0.5";
 
@@ -657,6 +664,7 @@ function hoverOverLinksWindow8(event) {
   function hoverOutLinksWindow8(event) {
     target.style.marginTop = 0;
     target.style.opacity = "1";
+    target.addEventListener("pointerout", hoverOutLinksWindow8);
   }
 }
 
