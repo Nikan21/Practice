@@ -1,4 +1,5 @@
 "use strict";
+const body = document.querySelector("body");
 let widthWindow = document.documentElement.clientWidth;
 let heightWindow = document.documentElement.clientHeight;
 
@@ -21,6 +22,23 @@ function changeHeader(event) {
     headerWrapperMenu.after(ubisoftHeaderLogo);
   } else {
     headerButton.after(ubisoftHeaderLogo);
+  }
+}
+
+//Hover overflow when modal window active
+const modal = document.querySelector(".modal");
+
+modal.addEventListener("show.bs.modal", showModalWindow);
+
+function showModalWindow(event) {
+  body.style.overflowY = "hidden";
+
+  modal.addEventListener("hide.bs.modal", hideModalWindow);
+
+  function hideModalWindow(event) {
+    body.removeAttribute("data-bs-overflow");
+    body.style.overflowY = "scroll";
+    modal.removeEventListener("hide.bs.modal", hideModalWindow);
   }
 }
 
@@ -110,7 +128,6 @@ function checkHeaderMenu(event) {
 //Dynamic change header toggler
 const headerTogglerBurger = document.querySelector(".header-toggler-burger");
 const headerTogglerCross = document.querySelector(".header-toggler-cross");
-headerTogglerBurger.classList.add("test");
 
 headerToggler.addEventListener("click", changeToggler);
 
